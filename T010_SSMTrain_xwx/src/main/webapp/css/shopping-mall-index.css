@@ -594,11 +594,14 @@
 .shop-right-con .shop-ul-tu li .li-md .md-l .md-l-r a {
     display: block;
     width: 14px;
-    height: 12.5px;
-    line-height: 12.5px;
+    height: 13px;
     text-align: center;
     border: 1px solid #dbdbdb;
     color: #ccc;
+}
+
+.shop-right-con .shop-ul-tu li .li-md .md-l .md-l-r a {
+    line-height: 13px;
 }
 
 .shop-right-con .shop-ul-tu li .li-md .md-l .md-l-r a:hover {
@@ -830,7 +833,7 @@
 /***********登录  页面***********/
 .sign-logo {
     width: 1172px;
-    padding: 32px 0 38px 28px;
+    padding: 22px 0 28px 28px;
 }
 
 .sign-con {
@@ -843,10 +846,10 @@
 
 .sign-con .sign-ipt {
     width: 325px;
-    height: 300px;
+    height: 390px;
     border: 1px solid #CBCBCB;
-    margin-top: 25px;
-    padding: 40px 0 0 45px;
+    /*margin-top: 25px;*/
+    padding: 30px 0 0 45px;
 }
 
 .sign-con .sign-ipt p {
@@ -864,11 +867,18 @@
     text-decoration: underline;
 }
 
-.sign-con .sign-ipt p .wj {
+.sign-con .sign-ipt p .login_to {
     float: right;
 }
 
-.sign-con .sign-ipt input {
+.error_tip {
+    visibility: hidden;
+    font-size: 13px;
+    color: red;
+
+}
+
+.sign-con .sign-ipt input:not([type=radio]) {
     width: 270px;
     height: 36px;
     border: 1px solid #ccc;
@@ -877,7 +887,7 @@
     font-size: 13px;
 }
 
-.sign-con .sign-ipt .slig-btn {
+.sign-con .sign-ipt .sign-btn {
     width: 280px;
     height: 36px;
     background: #F09E0B;
@@ -1441,7 +1451,7 @@
     text-align: right;
 }
 
-.password-con .psw input {
+.password-con .psw input:not([type='radio']) {
     width: 319px;
     height: 44px;
     padding: 0 10px;
@@ -1450,7 +1460,7 @@
     color: #8C8C8C;
 }
 
-.password-con .psw2 input {
+.password-con .psw2 input:not([type='radio']) {
     width: 182px;
     margin-right: 10px;
 }
@@ -1472,6 +1482,10 @@
 
 .password-con .psw .cuo {
     background: url(../images/psw-cuo.gif) no-repeat left center;
+}
+
+.cuo{
+    visibility: hidden;
 }
 
 .password-con .psw .dui {

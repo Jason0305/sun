@@ -5,17 +5,21 @@ import com.lonton.petstore.services.exceptions.DataInsertException;
 import com.lonton.petstore.services.exceptions.PasswordNotMatchException;
 import com.lonton.petstore.services.exceptions.ServiceException;
 import com.lonton.petstore.services.exceptions.UserNotFoundException;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author 许万兴
  */
+@Controller
 public class CenterController {
     
     @ExceptionHandler(ServiceException.class)
     @ResponseBody
     public ResponseJson<?> exceptionAction(ServiceException e) {
+        System.out.println("exception");
+        
         if (e instanceof UserNotFoundException) {
             return new ResponseJson<Void>(601, e.getMessage());
         } else if (e instanceof PasswordNotMatchException) {
@@ -25,7 +29,6 @@ public class CenterController {
         }else{
             return new ResponseJson<>(604, "系统忙，请稍后重试！");
         }
-
     }
     
 }

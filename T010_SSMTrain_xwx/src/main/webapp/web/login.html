@@ -1,18 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     <link rel="stylesheet" type="text/css" href="../css/shopping-mall-index.css"/>
+
 </head>
 
 <body>
 
 <div class="sign-logo w1200">
-    <h1><a href="#" title="宅客微购"><img src="../images/logo.jpg" title="请插入图片"/></a></h1>
+    <h1><a href="#" title="宅客微购"><img src="../images/logo.jpg" alt=""/></a></h1>
 </div>
 
 <div class="sign-con w1200">
@@ -20,11 +20,19 @@
     <div class="sign-ipt f-l">
         <form id="loginForm">
             <p>用户名</p>
-            <input type="text" name="username" id="username"  placeholder="用户名"/>
+            <input type="text" name="username" placeholder="Username"/>
+            <p class="error_tip">用户名不存在！</p>
             <p>密码</p>
-            <input type="text" name="password" id="password" placeholder="密码"/><br/>
-            <button class="login-btn" id="login">登录</button>
-            <p><a href="#">注册新账号</a><a href="#" class="forget" style="float: right;">忘记密码？</a></p>
+            <input type="text" name="password" placeholder="Password"/><br/>
+            <p class="error_tip">密码错误！</p>
+            <p>
+                <input type="radio" id="autoLogin">
+                <label for="autoLogin">记住密码</label>
+                <a href="#" class="login_to">忘记密码</a>
+                <span class="login_to">&nbsp;|&nbsp;</span>
+                <a href="register.html" class="login_to">免费注册</a>
+            </p>
+            <button type="button" class="sign-btn" id="loginBtn">登录</button>
             <div class="sign-qx">
                 <a href="#" class="f-r"><img src="../images/sign-xinlan.gif"/></a>
                 <a href="#" class="qq f-r"><img src="../images/sign-qq.gif"/></a>
@@ -34,6 +42,52 @@
     </div>
     <div style="clear:both;"></div>
 </div>
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/petstore.js"></script>
+<script type="text/javascript" src="../js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //页面加载是若先前记住过用户信息，则将用户信息直接填充到页面中
+        if ($.cookie("isAutoLogin") === "true") {
+            $("#autoLogin").attr({checked: "checked"});
+            $("#loginForm input[name='username']").val($.cookie("username"));
+            $("#loginForm input[name='password']").val($.cookie("password"));
+        }
+    });
+
+    function rememberUserInfo() {
+        if ($("#autoLogin").is(":checked")) {
+            $.cookie("isAutoLogin", "true", {expires: 7});
+            $.cookie("username", $("#loginForm input[name='username']").val(), {expires: 7});
+            $.cookie("password", $("#loginForm input[name='password']").val(), {expires: 7});
+        } else {
+            $.cookie("isAutoLogin", "false");
+            $.cookie("username", null);
+            $.cookie("password", null);
+        }
+    }
+
+    loginBtn.onclick = function () {
+        console.log("cookie.password:" + $.cookie("password"));
+        $.ajax({
+            url: "../user/login.do",
+            data: $("#loginForm").serialize(),
+            type: "get",
+            dataType: "json",
+            beforeSend: function () {
+                console.log("send Before...");
+                // $.blockUI({message: '<h1>Just a moment...</h1>'});
+            },
+            success: function (data) {
+                alert("response success...");
+                rememberUserInfo();
+                location.href = "index.html";
+                setTimeout($.unblockUI, 200);
+            }
+        });
+    };
+</script>
 
 <!--底部服务-->
 <div class="ft-service">
@@ -103,56 +157,6 @@
         沪ICP备13044278号<span>|</span>合字B1.B2-20130004<span>|</span>营业执照<span>|</span>互联网药品信息服务资格证<span>|</span>互联网药品交易服务资格证
     </p>
 </div>
-<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="../js/petstore.js"></script>
-<script type="text/javascript" src="../js/jquery.blockUI.js"></script>
-<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-<script type="text/javascript">
-    $(function () {
-        //页面加载是若先前记住过用户信息，则将用户信息直接填充到页面中
-        if ($.cookie("isRemember") === "true") {
-            $("#rmb_loginInfo").attr({checked: "checked"});
-            $("#username").val($.cookie("username"));
-            $("#password").val($.cookie("password"));
-        }
-    });
 
-    $(".form-control").bind("blur", function () {
-
-    });
-
-    function rememberUserInfo() {
-        if ($("#rmb_loginInfo").is(":checked")) {
-            $.cookie("isRemember", "true", {expires: 7});
-            $.cookie("username", $("#username").val(), {expires: 7});
-            $.cookie("password", $("#password").val(), {expires: 7});
-        } else {
-            $.cookie("isRemember", "false");
-            $.cookie("username", null);
-            $.cookie("password", null);
-        }
-    }
-
-    login.onclick = function () {
-        console.log("cookie.password:" + $.cookie("password"));
-        $.ajax({
-            url: "../user/login.do",
-            data: $("#loginForm").serialize(),
-            type: "post",
-            dataType: "json",
-            beforeSend: function () {
-                console.log("send Before...");
-                $.blockUI({message: '<h1>Just a moment...</h1>'});
-            },
-            success: function (data) {
-                console.log("response success...");
-                rememberUserInfo();
-                location.href = "index.html";
-                setTimeout($.unblockUI, 200);
-            }
-        });
-    };
-
-</script>
 </body>
 </html>
