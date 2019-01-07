@@ -34,7 +34,7 @@ a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有
 .top-con .t-con-l{ font-size:14px; color:#000; line-height:43px;}
 .top-con .t-con-r li{ float:left; margin-left:45px; line-height:43px;}
 .top-con .t-con-r .erweima{ position:relative;}
-.top-con .t-con-r .erweima a{padding-right:25px; background:url(../images/erweima-bg.jpg) no-repeat 80px center;}
+.top-con .t-con-r .erweima a{padding-right:25px; background:url(../../images/erweima-bg.jpg) no-repeat 80px center;}
 .top-con .t-con-r .erweima .ewm-tu{ width:94px; height:94px; padding:10px; background-color:#fff; border:1px solid #e5e5e5; overflow:hidden; position:absolute;top:43px; right:0; display:none;}
 .top-con .t-con-r .erweima .ewm-tu a{ padding:0;}
 .top-con .t-con-r li a{ font-size:14px; color:#000;}
@@ -82,7 +82,7 @@ a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有
 
 /*nav 开始*/
 .nav{ position:relative;}
-.nav .sp-kj{ width:267px; height:47px; line-height:47px; font-size:16px; color:#fff; float:left; background:#F09E0B url(../images/sp-kj-bg.jpg) no-repeat 6px center; padding-left:35px; position:relative;}
+.nav .sp-kj{ width:267px; height:47px; line-height:47px; font-size:16px; color:#fff; float:left; background:#F09E0B url(../../images/sp-kj-bg.jpg) no-repeat 6px center; padding-left:35px; position:relative;}
 .nav .kj-show{ width:302px; height:560px;z-index:1; position:absolute; top:47px; left:0;}
 .nav ul{ float:left;}
 .nav li{ float:left; width:112px; height:47px; line-height:47px; text-align:center;}
@@ -92,12 +92,12 @@ a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有
 .nav .kj-show2{width:302px;height:560px;background-color:#2B2B2B;z-index:2;position:relative;position:absolute; top:47px; left:0; }
 .nav .kj-show2 .kj-info1{ border-top:1px solid #343434; border-bottom:1px solid #000;}
 .nav .kj-show2 .kj-dl1{ padding:5px 10px 5px;}
-.nav .kj-show2 .kj-dl1 dt{padding-left:20px; background:url(../images/kj-show-dt-tu1.gif) no-repeat left center; margin-bottom:4px;}
+.nav .kj-show2 .kj-dl1 dt{padding-left:20px; background:url(../../images/kj-show-dt-tu1.gif) no-repeat left center; margin-bottom:4px;}
 .nav .kj-show2 .kj-dl1 dt a{ font-size:14px; font-weight:bold;color:#fff;}
 .nav .kj-show2 .kj-dl1 dt a:hover{ color:#F09E0B;}
 .nav .kj-show2 .kj-dl1 dd{ line-height:30px;font-size:14px; color:#fff;padding-left:20px;}
 .nav .kj-show2 .hover-show-bg{ background-color:#fff;}
-.nav .kj-show2 .hover-show-bg .kj-dl1 dt{background:url(../images/kj-show-dt-tu1-show.gif) no-repeat left center;}
+.nav .kj-show2 .hover-show-bg .kj-dl1 dt{background:url(../../images/kj-show-dt-tu1-show.gif) no-repeat left center;}
 .nav .kj-show2 .hover-show-bg dt a{ color:#2b2b2b;}
 .nav .kj-show2 .hover-show-bg dd{color:#2b2b2b;}
 .nav .kj-show2 .kj-if-show{ display:none; width:680px; min-height:558px;border:1px solid #DBDBDB; border-left:none; background-color:#fff; position:absolute; top:0; left:302px;}
@@ -129,9 +129,9 @@ a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有
 .hot-recommend .ys1 .ys1-ft{width:223px; height:75px;position:absolute; top:144px; left:39px;}
 .hot-recommend .ys1 .ys1-ft p{display:inline-block; width:94px; font-size:18px; color:#000;margin:14px 0 0 15px; float:left; text-align:center;}
 .hot-recommend .ys1 .ys1-ft p span{  font-size:14px; }
-.hot-recommend .ys1 .ys1-ft a{ float:left; width:90px; height:29px; background:url(../images/ys1-a-bg.jpg) no-repeat; text-align:center; line-height:29px; margin-top:25px; font-size:13px; color:#fff;}
+.hot-recommend .ys1 .ys1-ft a{ float:left; width:90px; height:29px; background:url(../../images/ys1-a-bg.jpg) no-repeat; text-align:center; line-height:29px; margin-top:25px; font-size:13px; color:#fff;}
 .hot-recommend .ys2 p{ font-size:18px; color:#000; text-align:center; margin:13px 0 15px;}
-.hot-recommend .ys2 .ys2-a1{ display:block; width:144px; height:29px; line-height:29px; text-align:center; font-size:12px; color:#fff; background:url(../images/ys2-a-bg.gif) no-repeat; margin:0 auto;}
+.hot-recommend .ys2 .ys2-a1{ display:block; width:144px; height:29px; line-height:29px; text-align:center; font-size:12px; color:#fff; background:url(../../images/ys2-a-bg.gif) no-repeat; margin:0 auto;}
 
 /*广告栏*/
 .advertisement{ height:74px; background-color:#EBEBEB; margin-top:20px; overflow:hidden;}
