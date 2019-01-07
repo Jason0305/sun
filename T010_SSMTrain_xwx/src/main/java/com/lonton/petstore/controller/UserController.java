@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends CenterController {
     
     @Autowired
     private IUserService userService;
@@ -26,15 +26,18 @@ public class UserController {
                                         @RequestParam("password") String password,
                                         @RequestParam(value = "gender", required = false, defaultValue = "1") int gender,
                                         String phone, String email) {
+//        userService.checkUsername(username);
+//        userService.checkPassword(password);
+//        userService.checkGender(gender);
         User user = userService.register(new User(username, password, gender, phone, email));
         return new ResponseJson<User>(user);
     }
     
-    @RequestMapping(value = "/login.do", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+    @RequestMapping(value = "/login.do", method = RequestMethod.GET)
     private ResponseJson loginAction(@RequestParam("username") String username,
                                      @RequestParam("password") String password) {
-        User user = userService.login(username, password);
-        return new ResponseJson<User>(user);
+//        userService.checkUsername(username);
+        return new ResponseJson<User>(userService.login(username, password));
     }
     
 }

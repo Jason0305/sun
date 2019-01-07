@@ -80,8 +80,11 @@
                 // $.blockUI({message: '<h1>Just a moment...</h1>'});
             },
             success: function (data) {
-                alert("response success...");
                 rememberUserInfo();
+                console.log("response success...");
+                if (data.status) {
+
+                }
                 location.href = "index.html";
                 setTimeout($.unblockUI, 200);
             }

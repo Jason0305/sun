@@ -17,17 +17,17 @@ public class CenterController {
     
     @ExceptionHandler(ServiceException.class)
     @ResponseBody
-    public ResponseJson<?> exceptionAction(ServiceException e) {
+    public ResponseJson<?> exceptionAction(Exception e) {
         System.out.println("exception");
-        
+        String msg = e.getMessage();
         if (e instanceof UserNotFoundException) {
-            return new ResponseJson<Void>(601, e.getMessage());
+            return new ResponseJson<Void>(601, msg);
         } else if (e instanceof PasswordNotMatchException) {
-            return new ResponseJson<Void>(602, e.getMessage());
+            return new ResponseJson<Void>(602, msg);
         } else if (e instanceof DataInsertException) {
-            return new ResponseJson<Void>(601, e.getMessage());
+            return new ResponseJson<Void>(603, msg);
         }else{
-            return new ResponseJson<>(604, "系统忙，请稍后重试！");
+            return new ResponseJson<>(600, "系统忙，请稍后重试！");
         }
     }
     

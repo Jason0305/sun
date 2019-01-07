@@ -6,26 +6,20 @@ import com.lonton.petstore.services.exceptions.DataInsertException;
 import com.lonton.petstore.services.exceptions.PasswordNotMatchException;
 import com.lonton.petstore.services.exceptions.UserNotFoundException;
 import com.lonton.petstore.services.exceptions.UsernameConflictException;
-import org.apache.log4j.Logger;
-import org.junit.Before;
+import lombok.extern.log4j.Log4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+@Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:spring-*.xml"})
 public class UserServiceImplTest {
     @Autowired
     private IUserService iUserService;
-    private Logger logger ;
-
-    @Before
-    public void setUp() {
-        logger = Logger.getLogger(UserServiceImpl.class);
-    }
-
+    
     @Test
     public void register() {
         User user = new User();
@@ -33,7 +27,7 @@ public class UserServiceImplTest {
         user.setPassword("you");
         user.setGender(1);
         user.setEmail("lily.c@foxmail.com");
-
+        
         User result = null;
         try {
             result = iUserService.register(user);
@@ -42,9 +36,9 @@ public class UserServiceImplTest {
         } catch (DataInsertException e) {
             e.printStackTrace();
         }
-        logger.info("result = " + result);
+        log.info("result = " + result);
     }
-
+    
     @Test
     public void login() {
         User user = null;
@@ -55,6 +49,6 @@ public class UserServiceImplTest {
         } catch (PasswordNotMatchException e) {
             e.printStackTrace();
         }
-        logger.info("user = " + user);
+        log.info("user = " + user);
     }
 }
