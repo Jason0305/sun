@@ -39,7 +39,6 @@ public class UserServiceImpl implements IUserService {
     private void insert(User user) {
         user.setSalt(getRandomSalt());
         user.setStatus(1);
-        user.setIsDelete(0);
         user.setPassword(getEncryptedPassword(user.getPassword(), user.getSalt()));
         if (userMapper.insert(user) == 0) {
             throw new DataInsertException("发生未知错误，请联系系统管理员！");

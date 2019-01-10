@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * AbstractApplicationContext ioc = new ClassPathXmlApplicationContext("classpath*:spring-*.xml");
  * 下文中@Autowired作用相当于
  * UserMapper userMapper = ioc.getBean("userMapper", UserMapper.class);
+ * @author xuwanxing
  */
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)

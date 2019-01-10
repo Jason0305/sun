@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
  *
  * @author 许万兴
  */
-@Data@AllArgsConstructor()
+@Data
 public class ResponseJson<T> {
     
     private int    responseStatusCode = 600;

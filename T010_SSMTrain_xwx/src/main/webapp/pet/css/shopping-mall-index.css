@@ -1433,16 +1433,16 @@
 }
 
 /***********找回密码***************/
-.password-con {
+.register_box {
     width: 700px;
     margin: 50px auto 0;
 }
 
-.password-con .psw {
+.register_box .group {
     margin-bottom: 10px;
 }
 
-.password-con .psw p {
+.register_box .group p {
     display: inline-block;
     width: 90px;
     margin-right: 10px;
@@ -1451,7 +1451,7 @@
     text-align: right;
 }
 
-.password-con .psw input:not([type='radio']) {
+.register_box .group input:not([type='radio']) {
     width: 319px;
     height: 44px;
     padding: 0 10px;
@@ -1460,12 +1460,12 @@
     color: #8C8C8C;
 }
 
-.password-con .psw2 input:not([type='radio']) {
+.register_box .group2 input:not([type='radio']) {
     width: 182px;
     margin-right: 10px;
 }
 
-.password-con .psw2 button {
+.register_box .group2 button {
     width: 123px;
     height: 44px;
     color: #fff;
@@ -1475,24 +1475,24 @@
     border: 0;
 }
 
-.password-con .psw span {
+.register_box .group span {
     margin-left: 10px;
     padding-left: 25px;
 }
 
-.password-con .psw .cuo {
-    background: url(../../images/psw-cuo.gif) no-repeat left center;
+.register_box .group .error {
+    background: url(../../images/psw-error.gif) no-repeat left center;
 }
 
-.cuo{
+.error{
     visibility: hidden;
 }
 
-.password-con .psw .dui {
-    background: url(../../images/psw-dui.gif) no-repeat left center;
+.register_box .group .correct {
+    background: url(../../images/psw-correct.gif) no-repeat left center;
 }
 
-.password-con .psw-btn {
+.register_box .login_btn {
     width: 340px;
     height: 44px;
     cursor: pointer;
@@ -1504,18 +1504,18 @@
 }
 
 /***********注册************/
-.password-con .psw3 input {
+.register_box .group3 input {
     width: 162px;
 }
 
-.password-con .yanzhentu .yz-tu {
+.register_box .yanzhentu .yz-tu {
     width: 163px;
     height: 64px;
     border: 1px solid #C0C0C0;
     margin-left: 103px;
 }
 
-.password-con .yanzhentu p {
+.register_box .yanzhentu p {
     display: inline-block;
     line-height: 66px;
     font-size: 14px;
@@ -1523,32 +1523,32 @@
     margin-left: 10px;
 }
 
-.password-con .yanzhentu p a {
+.register_box .yanzhentu p a {
     color: #F19F0B;
 }
 
-.password-con .agreement {
+.register_box .agreement {
     margin: 10px 0 10px 103px;
 }
 
-.password-con .agreement p {
+.register_box .agreement p {
     display: inline-block;
     font-size: 14px;
     color: #000;
     margin-left: 5px;
 }
 
-.password-con .agreement p span {
+.register_box .agreement p span {
     color: #F19F0B;
 }
 
-.password-con .sign-in {
+.register_box .sign-in {
     font-size: 14px;
     color: #000;
     margin: 10px 0 10px 103px;
 }
 
-.password-con .sign-in a {
+.register_box .sign-in a {
     color: #F19F0B;
 }
 
@@ -3088,7 +3088,7 @@
     margin-left: 12px;
     padding-left: 23px;
     line-height: 45px;
-    background: url(../../images/psw-dui.gif) no-repeat left center;
+    background: url(../../images/psw-correct.gif) no-repeat left center;
     font-size: 13px;
     color: #525252;
 }
@@ -3097,7 +3097,7 @@
     margin-left: 12px;
     padding-left: 23px;
     line-height: 45px;
-    background: url(../../images/psw-dui.gif) no-repeat left center;
+    background: url(../../images/psw-correct.gif) no-repeat left center;
     font-size: 13px;
     color: #000;
 }
