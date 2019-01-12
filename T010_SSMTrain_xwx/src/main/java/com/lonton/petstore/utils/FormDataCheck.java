@@ -32,6 +32,7 @@ public class FormDataCheck {
     
     /**
      * 校验表单
+     * @return asdf
      */
     public String verify(String value, String preText, String rule) throws Exception {
         String[] rs = rule.split(",");
@@ -43,7 +44,7 @@ public class FormDataCheck {
                     //需要特殊说明文字的在此添加case
                     case "required":
                         if (value != null && value.trim().length() > 0) {
-                        
+                            errorInfo = preText + "正常";
                         } else {
                             errorInfo = preText + "不能为空";
                         }

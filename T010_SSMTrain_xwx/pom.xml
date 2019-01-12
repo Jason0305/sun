@@ -168,7 +168,10 @@
                     <verbose>true</verbose>
                     <!--允许覆盖生成的文件-->
                     <overwrite>true</overwrite>
+                    <configurationFile>${project.basedir}/src/main/resources/mybatis-generator/generatorConfig.xml
+                    </configurationFile>
                 </configuration>
             </plugin>
-        </plugins>    </build>
+        </plugins>
+    </build>
 </project>

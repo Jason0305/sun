@@ -3,6 +3,8 @@ package com.lonton.petstore.controller;
 import com.lonton.petstore.entity.ResponseJson;
 import com.lonton.petstore.entity.User;
 import com.lonton.petstore.services.IUserService;
+import jdk.nashorn.internal.runtime.logging.DebugLogger;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @Author xuwanxing
  */
+@Log4j
 @RestController
 @RequestMapping("/user")
 public class UserController extends CenterController {
@@ -37,6 +40,8 @@ public class UserController extends CenterController {
     private ResponseJson loginAction(@RequestParam("username") String username,
                                      @RequestParam("password") String password) {
 //        userService.checkUsername(username);
+        log.info("username = " + username + ",password = " + password);
+        
         return new ResponseJson<User>(userService.login(username, password));
     }
     

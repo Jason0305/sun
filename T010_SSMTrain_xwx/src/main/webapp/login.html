@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/jquery.blockUI.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/formDataCheck.js"></script>
     <link rel="stylesheet" type="text/css" href="css/base.css"/>
 </head>
 
@@ -24,35 +25,37 @@
         <div class="pic">
             <img src="images/login_bg.jpg"/>
         </div>
-        <div class="login_form" id="loginForm">
-            <h3 style="font-size:15px;">宠物商城</h3>
-            <div class="login_list">
-                <p class="login_cont">
-                    <input type="text" class="login_txt style_border" value="邮箱/手机号/昵称"
-                           name="username" id="login_user" autocomplete="off" maxlength="20">
-                    <span class="user_icon"></span>
-                <div id="login_username" class="msg_error"></div>
-                </p>
-            </div>
-            <div class="login_list">
-                <p class="login_cont">
-                    <input class="login_txt style_border" type="password" name="password"
-                           id="password" maxlength="20"/>
-                    <label for="password" class="prompt_login1">密码</label>
-                    <span></span>
-                    <span class="pwd_icon"></span>
-                <div id="login_pwd_error" class="msg_error"></div>
-                </p>
-            </div>
-            <div class="login_options">
-                <input type="radio" id="autoLogin">
-                <label for="autoLogin">记住密码</label>
-                <span>
+        <div class="login_form">
+            <form id="loginForm">
+                <h3 style="font-size:15px;">宠物商城</h3>
+                <div class="login_list">
+                    <p class="login_cont">
+                        <input type="text" class="login_txt style_border"
+                               name="username" id="login_user" autocomplete="off" maxlength="20">
+                        <span class="user_icon"></span>
+                        <label for="password" class="prompt_login1">邮箱/手机号/昵称</label>
+                    <div id="login_username" class="msg_error"></div>
+                    </p>
+                </div>
+                <div class="login_list">
+                    <p class="login_cont">
+                        <input class="login_txt style_border" type="text" placeholder="密码"
+                               name="password" id="password" maxlength="20"/>
+                        <span class="pwd_icon"></span>
+                        <label for="password" class="prompt_login1">密码</label>
+                        <span id=""></span>
+                    <div id="login_pwd_error" class="msg_error"></div>
+                    </p>
+                </div>
+                <div class="login_options">
+                    <input type="checkbox" id="autoLogin">
+                    <label for="autoLogin">记住密码</label>
+                    <span>
                     <a href="#" class="login_to">忘记密码</a>
-                    <span>&nbsp;|&nbsp;</span>
-                    <a href="register.jsp" class="login_to">免费注册</a>
+                    <span>&nbsp;|&nbsp;</span><a href="register.jsp" class="login_to">免费注册</a>
                 </span>
-            </div>
+                </div>
+            </form>
             <div class="login_btn_wrap">
                 <button type="button" class="login_btn" id="loginBtn">立即登录</button>
             </div>
@@ -64,44 +67,35 @@
                     <a href="javascript:;" class="sina_way"></a>
                     <a href="javascript:;" class="weixin_way"></a>
                 </div>
-                <!-- <div class="more_way_wrap">
-                    <h4>更多登录方式&gt;&gt;</h4>
-                </div> -->
+                <div class="more_way_wrap">
+                    <a><h4>更多登录方式&gt;&gt;</h4></a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <script type="text/javascript">
+    console.log(FormReg.formCheck("邮箱: " + "2141243@qq.com", "邮箱", "email,phone,username",));
     $(function () {
         $(".login_txt").focus(function () {
             $(this).addClass("login_focus");
             $(this).removeClass("style_border");
-            if ($(this).val() == this.defaultValue) {
+            if ($(this).val() === this.defaultValue) {
                 $(this).val("");
             }
         }).blur(function () {
             $(this).removeClass("login_focus");
             $(this).addClass("style_border");
-            if ($(this).val() == '') {
+            if ($(this).val() === '') {
                 $(this).val(this.defaultValue);
             }
         });
-    })
+    });
 
     $("#login_user").bind("focus", function () {
         document.getElementById("login_username").innerHTML = "请输入您的用户名或注册邮箱";
-    });
-
-    $("#login_user").bind("blur", function () {
-        var username = this.value;
-        if (username == null || username == '') {
-            document.getElementById("login_username").innerHTML = "";
-        } else if (username.length < 1) {
-            document.getElementById("login_username").innerHTML = "请输入您的用户名或注册邮箱";
-        } else {
-            // document.getElementById("login_username").innerHTML="<img src='images/right.gif'></img>";
-            document.getElementById("login_username").innerHTML = "";
-        }
     });
 
     $("#password").bind("focus", function () {
@@ -109,22 +103,37 @@
         $('.prompt_login1').css('display', 'none');
     });
 
-    $("#password").bind("blur", function () {
-        var password = this.value;
+    $("#login_user").bind("blur", function () {
+        const username = this.value;
+        if (username == null || username == '') {
+            login_username.innerHTML = "用户名不能为空";
+        } else if (username.length < 1) {
+            login_username.innerHTML = "请输入您的用户名或注册邮箱";
+        } else {
+            login_username.innerHTML = "<img src='images/right.gif'></img>";
+            login_username.innerHTML = "";
+        }
+    });
+
+
+    /** 当密码输入框内容改变，校验合法性 */
+    $("#username,#password").bind("blur", function () {
+        const value = this.value;
         if (password == null || password == '') {
-            document.getElementById("login_pwd_error").innerHTML = "";
+            document.getElementById("login_pwd_error").innerHTML = "请输入" + this.name;
             $('.prompt_login1').css('display', 'block');
         } else if (password.length < 6) {
             document.getElementById("login_pwd_error").innerHTML = "请输入至少6位以字母开头，数字或符号";
             $('.prompt_login1').css('display', 'none');
         } else {
-            // document.getElementById("login_pwd_error").innerHTML="<img src='images/right.gif'></img>";
+            document.getElementById("login_pwd_error").innerHTML="<img src='images/right.gif'></img>";
             document.getElementById("login_pwd_error").innerHTML = "";
         }
     });
 
+    /** 页面加载时将记住的密码信息填充到页面 */
     $(function () {
-        //页面加载是若先前记住过用户信息，则将用户信息直接填充到页面中
+        //页面加载先前记录的用户信息并选择填充到页面
         if ($.cookie("isAutoLogin") === "true") {
             $("#autoLogin").attr({checked: "checked"});
             $("#loginForm input[name='username']").val($.cookie("username"));
@@ -132,6 +141,13 @@
         }
     });
 
+    function formTip(dom, msg, isRight) {
+        let color = isRight ? green : red;
+        $(dom).next().text(msg);
+
+    }
+
+    /** 记住密码 */
     function rememberUserInfo() {
         if ($("#autoLogin").is(":checked")) {
             $.cookie("isAutoLogin", "true", {expires: 7});
@@ -144,6 +160,7 @@
         }
     }
 
+    /** 执行登录操作 */
     loginBtn.onclick = function () {
         console.log("cookie.password:" + $.cookie("password"));
         $.ajax({
@@ -153,19 +170,31 @@
             dataType: "json",
             beforeSend: function () {
                 console.log("send Before...");
-                // $.blockUI({message: '<h1>Just a moment...</h1>'});
+                $.blockUI({message: '<h1>Just a moment...</h1>'});
             },
             success: function (data) {
-                rememberUserInfo();
+                alert(data.status);
                 console.log("response success...");
-                if (data.status) {
-
+                if (data.status == 600) {
+                    rememberUserInfo();
+                    location.href = "index.html"
+                } else if (data.status == 601) {
+                    alert("用户不存在！");
+                } else if (data.status == 602) {
+                    alert("密码输入错误");
                 }
-                location.href = "index.html";
+            },
+            complete() {
                 setTimeout($.unblockUI, 200);
             }
         });
     };
+
+    /** 账号第三方登录功能不可用提示 */
+    $(".fast_login a").bind("click", function () {
+        alert("该功能暂未开通！敬请期待！");
+        return false;
+    });
 </script>
 
 <!--footer搜索-->

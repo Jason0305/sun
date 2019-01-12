@@ -1,8 +1,6 @@
 package com.lonton.petstore.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 /**
  *
@@ -11,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 public class ResponseJson<T> {
     
-    private int    responseStatusCode = 600;
+    private int    status = 600;
     private String msg;
     private T      data;
     
@@ -19,8 +17,8 @@ public class ResponseJson<T> {
         super();
     }
     
-    public ResponseJson(int responseStatusCode, String msg) {
-        this.responseStatusCode = responseStatusCode;
+    public ResponseJson(int status, String msg) {
+        this.status = status;
         this.msg = msg;
     }
     

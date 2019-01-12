@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:spring-*.xml"})
+@ContextConfiguration(locations = {"classpath*:Spring/spring-*.xml"})
 public class UserServiceImplTest {
     @Autowired
     private IUserService iUserService;

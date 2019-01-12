@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:spring-*.xml"})
+@ContextConfiguration(locations = {"classpath*:Spring/spring-*.xml"})
 public class UserMapperTest {
     
     /**
@@ -52,7 +52,7 @@ public class UserMapperTest {
      */
     @Test
     public void getUserById() {
-        User user = userMapper.getUserById(1);
+        User user = userMapper.selectByPrimaryKey(1);
         log.info("user = " + user);
     }
 }

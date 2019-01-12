@@ -1,27 +1,18 @@
 package com.lonton.petstore.entity;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 
-/**
- * 存储用户注册信息的User类。
- *
- * @Author xuwanxing
- */
 @Data
 public class User {
-    public static final int ONLINE  = 1;
-    public static final int OFFLINE = 0;
-    
     private Integer id;
     private String  username;
     private String  password;
     private Integer gender;
     private String  email;
     private String  phone;
-    private String  avatar;
+    private String  avatar = "-1";
     private String  salt;
     private Integer grade;
     private Integer status;
@@ -32,13 +23,12 @@ public class User {
         super();
     }
     
-    public User(String username, String password, int gender, String email, String phone) {
-        
-        super();
+    public User(String username, String password, Integer gender, String email, String phone) {
         this.username = username;
         this.password = password;
         this.gender = gender;
         this.email = email;
         this.phone = phone;
     }
+    
 }

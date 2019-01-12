@@ -9,6 +9,7 @@ import com.lonton.petstore.services.exceptions.UserNotFoundException;
 import com.lonton.petstore.services.exceptions.UsernameConflictException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 import java.util.UUID;
@@ -16,12 +17,12 @@ import java.util.UUID;
 /**
  * 用户业务层实现类
  */
-@Service("iUserService")
+@Service("userService")
 public class UserServiceImpl implements IUserService {
     
     @Autowired
     private UserMapper userMapper;
-    
+//    @Transactional
     @Override
     public User register(User user) throws UsernameConflictException, DataInsertException {
         // -判断尝试注册的用户名是否存在
@@ -38,9 +39,9 @@ public class UserServiceImpl implements IUserService {
     
     private void insert(User user) {
         user.setSalt(getRandomSalt());
-        user.setStatus(1);
+//        user.setStatus(1);
         user.setPassword(getEncryptedPassword(user.getPassword(), user.getSalt()));
-        if (userMapper.insert(user) == 0) {
+        if (userMapper.insertSelective(user) == 0) {
             throw new DataInsertException("发生未知错误，请联系系统管理员！");
         }
     }
