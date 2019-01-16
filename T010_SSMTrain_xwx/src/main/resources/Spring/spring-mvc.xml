@@ -28,12 +28,46 @@
     </context:component-scan>
 
     <!--=================== 配置视图解析器 ================-->
+    <!-- 视图解析器1:jsp视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--配置前缀-->
         <property name="prefix" value="/WEB-INF/"/>
         <!--配置后缀-->
         <property name="suffix" value=".jsp"/>
+        <property name="order" value="1"/>
     </bean>
+    <!-- 视图解析器2:html视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--配置前缀-->
+        <property name="prefix" value="/"/>
+        <!--配置后缀-->
+        <property name="suffix" value=".html"/>
+        <property name="order" value="0"/>
+    </bean>
+
+
+    <!-- 配置拦截器链 -->
+    <mvc:interceptors>
+        <!-- 配置第1个拦截器 -->
+        <mvc:interceptor>
+            <!-- 1. 拦截的路径 -->
+            <mvc:mapping path="/user/**"/>
+            <mvc:mapping path="/address/**"/>
+            <mvc:mapping path="/cart/**"/>
+            <mvc:mapping path="/order/**"/>
+            <mvc:mapping path="/main/index.do"/>
+            <!-- 2. 例外的路径，不拦截的路径，即白名单-->
+            <mvc:exclude-mapping path="/user/reg.do"/>
+            <mvc:exclude-mapping path="/user/handle_reg.do"/>
+            <mvc:exclude-mapping path="/user/login.do"/>
+            <mvc:exclude-mapping path="/user/username_check.do"/>
+            <mvc:exclude-mapping path="/user/handle_login.do"/>
+            <!-- 3. 指定拦截器类 -->
+            <bean class="com.lonton.petstore.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
 
     <!--能支持SpringMVC更高级的一些功能，如JSR303校验，快捷的ajax...-->
     <mvc:annotation-driven>

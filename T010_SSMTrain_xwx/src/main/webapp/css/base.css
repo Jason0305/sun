@@ -124,8 +124,6 @@ input, a, img {
 }
 
 /****************************************首页CSS]]***************************************/
-
-
 /*顶部浮动*/
 .topMenu {
     width: 100%;
@@ -162,30 +160,26 @@ input, a, img {
     background: #EAEAEA;
     position: relative;
     height: 363px;
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 10px auto 0;
 }
 
 .xsareIndexCont {
     width: 1200px;
     height: 410px;
-    margin: 0 auto;
-    MARGIN-top: 20px;
+    margin: 20px auto 0;
 }
 
 .tenIndexCont {
     width: 1200px;
     height: 1480px;
-    margin: 0 auto;
-    MARGIN-top: 20px;
+    margin: 20px auto 0;
     *MARGIN-top: 0px;
 }
 
 .advIndexCont {
     width: 1200px;
-    margin: 0 auto;
     height: 500px;
-    margin-top: 20px;
+    margin: 20px auto 0;
 }
 
 .jdCont {
@@ -196,13 +190,13 @@ input, a, img {
 .indexContFloor {
     width: 1200px;
     margin: auto;
-    height: 3315px;
+    height: min-content;
 }
 
 .indexContFooter {
     width: 1200px;
-    margin: auto; /*height: 500px;*/
-    margin-top: 30px;
+    /*height: 500px;*/
+    margin: 30px auto auto;
 }
 
 .indexCont .tL li {
@@ -269,7 +263,7 @@ input, a, img {
     z-index: 20;
 }
 
-.tmCont .top_hidebox {
+.tmCont .top_hide_box {
     display: none;
     position: absolute;
     left: 0;
@@ -298,7 +292,7 @@ input, a, img {
     _width: 83px;
 }
 
-.tmCont li.htphone .top_hidebox {
+.tmCont li.htphone .top_hide_box {
     width: 71px;
     padding: 1px 5px 0;
 }
@@ -321,16 +315,16 @@ input, a, img {
     _width: 83px;
 }
 
-.tmCont li.webnav .top_hidebox {
+.tmCont li.webnav .top_hide_box {
     width: 61px;
     left: 0px;
 }
 
-.top_hidebox a {
+.top_hide_box a {
     color: #666
 }
 
-.top_hidebox a:hover {
+.top_hide_box a:hover {
     color: #8cb91e;
     text-decoration: none;
 }
@@ -543,9 +537,11 @@ input, a, img {
 .search input {
     float: left;
 }
-.search_btn{
-    float:left;
+
+.search_btn {
+    float: left;
 }
+
 .search_hot {
     float: left;
     height: 30px;
@@ -756,7 +752,7 @@ input, a, img {
     z-index: 10;
     color: #FFF;
     _width: 8px;
-    _top: -1px;
+    _top: 1px;
     _left: 1px;
 }
 
@@ -2211,7 +2207,6 @@ em, i {
 }
 
 .GG_menu li a.selected {
-    background-color: #fff;
     line-height: 33px;
     float: left;
     text-decoration: none;
@@ -2352,10 +2347,10 @@ em, i {
 
 /*底部footer*/
 .footer {
-    float: left;
+    /*float: left;*/
     width: 1200px;
     border-top: 1px solid #DDD;
-    margin-top: 50px;
+    margin: 50px auto 0 auto;
 }
 
 .footer .foot-cont {
@@ -2363,6 +2358,7 @@ em, i {
     padding: 10px 100px;
     margin-bottom: 20px;
     background: #FFF;
+    /*text-align:center;*/
     border-bottom: 1px solid #F1F1F1;
 }
 
@@ -2643,8 +2639,6 @@ em, i {
 
 /*--图划过效果--*/
 .h-slide {
-    margin-top: 16px;
-    margin-bottom: 20px;
     padding: 15px 0;
     margin: 0 auto;
     width: 1190px;
@@ -2986,8 +2980,7 @@ em, i {
 .htCont .ht-good li .htimg img {
     width: 160px;
     height: 160px;
-    margin: 20px auto;
-    margin-bottom: 0;
+    margin: 20px auto 0;
 }
 
 .htCont .ht-good li .buy_btn {
@@ -5489,8 +5482,7 @@ us .btn span {
 
 .logo_blk {
     width: 1015px;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     padding-bottom: 10px;
     border-bottom: 2px solid #679800;
 }
@@ -5560,7 +5552,8 @@ us .btn span {
 }
 
 .login_options {
-!important;color: #F19F0B;
+!important;
+    color: #F19F0B;
     min-height: 28px;
 }
 
@@ -5569,7 +5562,7 @@ us .btn span {
     top: 2px;
 }
 
-.login_options>span {
+.login_options > span {
     float: right;
 }
 
@@ -5577,12 +5570,14 @@ us .btn span {
     cursor: pointer;
 }
 
-.login_box .login_form .login_list .login_txt {
+.login_box .login_form .login_list .login_input {
     width: 280px;
     height: 34px;
     line-height: 34px;
-    color: #999999;
+    color: #434343;
+    /*font-weight: bolder;*/
     padding-left: 35px;
+    /*padding-right: 35px;*/
 }
 
 .login_box .login_form .msg_error, .reg_box .reg_form .msg_error {
@@ -5598,6 +5593,13 @@ us .btn span {
     position: absolute;
     top: 8px;
     left: 10px;
+}
+
+.login_box .login_form .uname_correct {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 10px;
 }
 
 .login_box .login_form .pwd_icon, .reg_box .reg_form .pwd_icon {
@@ -5622,12 +5624,15 @@ us .btn span {
     line-height: 46px;
     cursor: pointer;
 }
-.login_btn:hover{
+
+.login_btn:hover {
     background: #9fe557;
 }
-.login:active{
+
+.login:active {
     background: #e5a97c;
 }
+
 .fast_login {
     float: left;
 }
@@ -5700,11 +5705,15 @@ us .btn span {
     border: 1px solid #7abd54;
 }
 
+.reg_error, .login_error {
+    border: 1px solid #bd2017;
+}
+
 .style_border {
     border: 1px solid #ddd;
 }
 
-.prompt_login1 {
+.prompt_login {
     color: #aaaaaa;
     font-size: 12px;
     cursor: text;
@@ -5714,14 +5723,8 @@ us .btn span {
     display: inline;
 }
 
-.prompt_login2 {
-    color: #aaaaaa;
-    font-size: 12px;
+.prompt_login:hover {
     cursor: text;
-    position: absolute;
-    left: 37px;
-    top: 8px;
-    display: inline;
 }
 
 /*.reg_list label { float:left; width:100px; text-align:right;}
@@ -6079,8 +6082,7 @@ ul.expmenu li ul li:not(.selected):active{background:#f1f1f1;cursor:pointer;}*/
     text-decoration: none;
     color: #333;
     border: 1px solid #eb6100;
-    background: url(../images/list_09.gif) no-repeat 4px 6px;
-    background-color: #fdf7eb;
+    background: #fdf7eb url(../images/list_09.gif) no-repeat 4px 6px;
     color: #eb6100;
 }
 
@@ -6103,14 +6105,12 @@ ul.expmenu li ul li:not(.selected):active{background:#f1f1f1;cursor:pointer;}*/
     ext-decoration: none;
     color: #eb6100;
     border: 1px solid #eb6100;
-    background: url(../images/list_13.gif) no-repeat 4px 6px;
-    background-color: #fdf7eb;
+    background: #fdf7eb url(../images/list_13.gif) no-repeat 4px 6px;
 }
 
 .price-2 dl dd a.listdonw {
     float: left;
-    background: url(../images/list_13.gif) no-repeat 4px 6px;
-    background-color: #fdf7eb;
+    background: #fdf7eb url(../images/list_13.gif) no-repeat 4px 6px;
     color: #eb6100;
 }
 
@@ -6448,8 +6448,7 @@ ul.expmenu li ul li:not(.selected):active{background:#f1f1f1;cursor:pointer;}*/
 
 .contain_box .item-inner .pic img {
     display: block;
-    margin: 5px 11px 0 11px;
-    margin-bottom: 0;
+    margin: 5px 11px 0;
     overflow: hidden;
 }
 
@@ -9006,8 +9005,7 @@ h2.head_title i {
 }
 
 .hot_dan .JPprice {
-    margin: 5px 0;
-    margin-top: 10px;
+    margin: 10px 0 5px;
     float: left;
     line-height: 28px;
     height: 28px;
@@ -9730,8 +9728,7 @@ label[for], input[type="button"], input[type="submit"], input[type="reset"] {
     background: url(../images/card_ico.png) no-repeat 0 0;
     width: 50px;
     height: 30px;
-    margin-right: 5px;
-    margin: 25px 5px 0px 5px;
+    margin: 25px 5px 0px;
 }
 
 .card_cont .card_icon2 {
@@ -9739,8 +9736,7 @@ label[for], input[type="button"], input[type="submit"], input[type="reset"] {
     background: url(../images/card_ico.png) no-repeat 0 -34px;
     width: 50px;
     height: 30px;
-    margin-right: 5px;
-    margin: 25px 5px 0px 5px;
+    margin: 25px 5px 0px;
 }
 
 .card_cont .card_icon3 {
@@ -9748,8 +9744,7 @@ label[for], input[type="button"], input[type="submit"], input[type="reset"] {
     background: url(../images/card_ico.png) no-repeat 0 -66px;
     width: 50px;
     height: 30px;
-    margin-right: 5px;
-    margin: 25px 5px 0px 5px;
+    margin: 25px 5px 0px;
 }
 
 .card_cont .c_text {
@@ -10765,4 +10760,129 @@ line-height: 38px;}
 
 .loginpd .reg {
     color: #ed1c24;
+}
+
+/***********注册************/
+.register_box {
+    width: 700px;
+    margin: 50px auto 0;
+}
+
+.register_box .group {
+    margin-bottom: 10px;
+}
+
+.register_box .group p {
+    display: inline-block;
+    width: 90px;
+    margin-right: 10px;
+    font-size: 15px;
+    color: #2E2E2E;
+    text-align: right;
+}
+
+.register_box .group input:not([type='radio']) {
+    width: 319px;
+    height: 44px;
+    padding: 0 10px;
+    border: 1px solid #CBCBCB;
+    font-size: 13px;
+    color: #8C8C8C;
+}
+
+.register_box .group2 input:not([type='radio']) {
+    width: 182px;
+    margin-right: 10px;
+}
+
+.register_box .group2 button {
+    width: 123px;
+    height: 44px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    background: #F09E0B;
+    border: 0;
+}
+
+.register_box .group span {
+    margin-left: 10px;
+    padding-left: 25px;
+}
+
+.register_box .group .error {
+    background: url(../images/psw-error.gif) no-repeat left center;
+    /*visibility: hidden;*/
+}
+
+.register_box .group .correct {
+    background: url(../images/psw-correct.gif) no-repeat left center;
+    /*visibility: hidden;*/
+}
+
+.register_box .reg_btn {
+    width: 340px;
+    height: 44px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 103px;
+    font-size: 16px;
+    background: #F09E0B;
+    border: none;
+}
+
+.register_box .group3 input {
+    width: 162px;
+}
+
+.register_box .psw4 input {
+    width: 132px;
+}
+
+.register_box .verification_code .yz-tu {
+    width: 163px;
+    height: 64px;
+    border: 1px solid #C0C0C0;
+    margin-left: 103px;
+}
+
+.register_box .verification_code p {
+    display: inline-block;
+    line-height: 66px;
+    font-size: 14px;
+    color: #000;
+    margin-left: 10px;
+}
+
+.register_box .verification_code p a {
+    color: #F19F0B;
+}
+
+.f-l {
+    float: left;
+}
+
+.register_box .agreement {
+    margin: 10px 0 10px 103px;
+}
+
+.register_box .agreement p {
+    display: inline-block;
+    font-size: 14px;
+    color: #000;
+    margin-left: 5px;
+}
+
+.register_box .agreement p span {
+    color: #F19F0B;
+}
+
+.register_box .sign-in {
+    font-size: 14px;
+    color: #000;
+    margin: 10px 0 10px 103px;
+}
+
+.register_box .sign-in a {
+    color: #F19F0B;
 }

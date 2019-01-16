@@ -1,31 +1,33 @@
 function FormReg() {
 
     //用户名正则，4到16位（字母，中文, 数字，下划线）
-    this.username = /^[\u4E00-\u9FA5\w_]{4,16}$/;
+    FormReg.username = /^[\u4E00-\u9FA5\w_]{2,16}$/;
     //密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
-    this.password = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z_]{6,16}$/;
+    FormReg.password = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z_]{6,16}$/;
     //邮箱
-    this.email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    FormReg.email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     //手机或者固话
-    this.phone = /(^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$)|(^0?[1][358][0-9]{9}$)/;
+    FormReg.phone = /(^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$)|(^0?[1][358][0-9]{9}$)/;
     //邮编
-    this.postcode = /^\d{6}$/;
+    FormReg.postcode = /^\d{6}$/;
     //身份证
-    this.idCard = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
+    FormReg.idCard = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
     //url
-    this.url = /^((ht|f)tps?):\/\/([\w\-]+(\.[\w\-]+)*\/)*[\w\-]+(\.[\w\-]+)*\/?(\?([\w\-\.,@?^=%&:\/~\+#]*)+)?/;
+    FormReg.url = /^((ht|f)tps?):\/\/([\w\-]+(\.[\w\-]+)*\/)*[\w\-]+(\.[\w\-]+)*\/?(\?([\w\-\.,@?^=%&:\/~\+#]*)+)?/;
     //ip
-    this.ip = /((25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))/;
+    FormReg.ip = /((25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))/;
     //物理地址
-    this.mac = /^[A-F0-9]{2}(-[A-F0-9]{2}){5}$/;
+    FormReg.mac = /^[A-F0-9]{2}(-[A-F0-9]{2}){5}$/;
     //两位小数
-    this.decimal = /^[0-9]+(.[0-9]{2})?$/;
+    FormReg.decimal = /^[0-9]+(.[0-9]{2})?$/;
     //数字
-    this.num = /^[0-9]*$/;
+    FormReg.num = /^[0-9]*$/;
     //正整数
-    this.pos = /^\d+$/;
+    FormReg.pos = /^\d+$/;
     //负整数正则
-    this.neg = /^-\d+$/;
+    FormReg.neg = /^-\d+$/;
+    this.username2 = 2;
+
 }
 
 /**
@@ -98,62 +100,64 @@ FormReg.formCheck = function (value, preText, rule) {
 FormReg.verifyByRegular = function (value, preText, rule) {
     let errorInfo = null;
     let regex;
+    alert(this.username2);
     switch (rule) {
         case "username":
-            regex = this.username;
+            regex = FormReg.username;
             break;
         case "password":
-            regex = this.password;
+            regex = FormReg.password;
             break;
         case "email":
-            regex = this.email;
+            regex = FormReg.email;
             break;
         case "phone":
-            regex = this.phone;
+            regex = FormReg.phone;
             break;
         case "postcode":
-            regex = this.postcode;
+            regex = FormReg.postcode;
             break;
         case "sfz":
-            regex = this.idCard;
+            regex = FormReg.idCard;
             break;
         case "n":
-            regex = this.n;
+            regex = FormReg.n;
             break;
         case "url":
-            regex = this.url;
+            regex = FormReg.url;
             break;
         case "ip":
-            regex = this.ip;
+            regex = FormReg.ip;
             break;
         case "mac":
-            regex = this.mac;
+            regex = FormReg.mac;
             break;
         case "decimal":
-            regex = this.decimal;
+            regex = FormReg.decimal;
             break;
         case "num":
-            regex = this.num;
+            regex = FormReg.num;
             break;
         case "pos":
-            regex = this.pos;
+            regex = FormReg.pos;
             break;
         case "neg":
-            regex = this.neg;
+            regex = FormReg.neg;
         default:
             break;
     }
     if (regex === "") {
         errorInfo = "不支持";
     } else {
-        if (value.match(regex)) {
+        alert(regex);
+        if (regex.test(value)) {
             errorInfo = "正确";
         } else {
             errorInfo = preText + "格式不正确，请重新检查！";
         }
     }
     return errorInfo;
-}
+};
 
 /**
  * 校验最少长度
@@ -183,3 +187,5 @@ FormReg.maxLen = function (preText, value, max) {
     return errorInfo;
 }
 
+alert(FormReg.formCheck("asdf", "用户名", "username"));
+// alert((/^[\u4E00-\u9FA5\w_]{2,16}$/));

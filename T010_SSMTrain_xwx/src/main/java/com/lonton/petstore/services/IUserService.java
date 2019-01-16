@@ -30,4 +30,6 @@ public interface IUserService {
      * @throws DataInsertException       位置错误
      */
     User register(User user) throws UsernameConflictException, DataInsertException;
+    
+    User getUserByUsername(String username);
 }

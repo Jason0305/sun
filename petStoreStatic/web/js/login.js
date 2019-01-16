@@ -93,6 +93,7 @@ $(function () {
             type: "get",
             dataType: "json",
             beforeSend: function () {
+                alert("1");
                 $("#loginBtn").addClass("disabled").children("i").removeClass("sr-only").next("span").text("");
             },
             success: function (data) {
@@ -106,8 +107,8 @@ $(function () {
                     alert("密码不正确，请重新检查！").css("color", "red");
                 }
             },
-            complete() {
-                $("#loginBtn").removeClass("disabled").children("i").addClass("sr-only").next().text("登录");
+            complete:function() {
+                // $("#loginBtn").removeClass("disabled").children("i").addClass("sr-only").next().text("登录");
             }
         });
     });

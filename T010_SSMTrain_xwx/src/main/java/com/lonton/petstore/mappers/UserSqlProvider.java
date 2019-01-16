@@ -37,7 +37,7 @@ public class UserSqlProvider {
         }
         
         if (record.getPhone() != null) {
-            VALUES("phone", "#{phone,jdbcType=VARCHAR}");
+            VALUES("phone", "#{phone,jdbcType=CHAR}");
         }
         
         if (record.getAvatar() != null) {
@@ -88,7 +88,7 @@ public class UserSqlProvider {
         }
         
         if (record.getPhone() != null) {
-            SET("phone = #{phone,jdbcType=VARCHAR}");
+            SET("phone = #{phone,jdbcType=CHAR}");
         }
         
         if (record.getAvatar() != null) {

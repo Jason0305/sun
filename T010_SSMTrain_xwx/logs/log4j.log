@@ -1,3 +1,26 @@
 【WARN  | 2019-01-11 15:01:55 | At com.lonton.petstore.generator.GeneratorDataTest.userInsert(*) 98th row】:309250641
 【WARN  | 2019-01-11 15:02:22 | At com.lonton.petstore.generator.GeneratorDataTest.userInsert(*) 98th row】:287256035
 【WARN  | 2019-01-11 15:02:52 | At com.lonton.petstore.generator.GeneratorDataTest.userInsert(*) 96th row】:723942479
+【WARN  | 2019-01-16 19:37:11 | At com.lonton.petstore.generator.GeneratorDataTest.userInsert(*) 96th row】:766920065
+【WARN  | 2019-01-16 20:15:33 | At com.lonton.petstore.generator.UserInsertTest.userInsert(*) 68th row】:31269201162
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:0
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:1
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:2
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:3
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:4
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:5
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:6
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:7
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:8
+【WARN  | 2019-01-16 23:16:19 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:9
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:0
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:1
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:2
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:3
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:4
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:5
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:6
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:7
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:8
+【WARN  | 2019-01-16 23:44:42 | At com.lonton.petstore.generator.AddressInsertTest.addressInsert(*) 39th row】:9
+【WARN  | 2019-01-16 23:49:47 | At com.lonton.petstore.generator.AddressInsertTest.test(*) 79th row】:district = District(id=4, parent=110100, code=110104, name=宣武区)

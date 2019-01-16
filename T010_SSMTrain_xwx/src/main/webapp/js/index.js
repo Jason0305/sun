@@ -1,7 +1,7 @@
 // JavaScript Document
 var startTime = new Date();
 	//规定截止时间
-	startTime.setFullYear(2014);//截止年份
+	startTime.setFullYear(2019);//截止年份
 	startTime.setHours(23);//截止当天小时
 	startTime.setMinutes(40);//截止当天分钟
 	startTime.setSeconds(40);//截止当天秒

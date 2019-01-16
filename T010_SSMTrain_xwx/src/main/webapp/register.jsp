@@ -165,13 +165,13 @@
             </ul>
             <ul id="tMenu" class="fr tW tmCont">
                 <li class="webnav"><strong class="top_icon"><a href="javascript:;"> 我的素品 </a></strong>
-                    <div class="top_hidebox wdsp">
+                    <div class="top_hide_box wdsp">
                         <div class=""><a href="userAccount/userOrder.html">我的订单</a></div>
                         <div><a href="userAccount/integral.html">我的积分</a></div>
                     </div>
                 </li>
                 <li class="webnav"><strong class="top_icon"><a href="javascript:;">帮助中心</a></strong>
-                    <div class="top_hidebox">
+                    <div class="top_hide_box">
                         <div class=""><a href="help/help_index.html">购物流程</a></div>
                         <div><a href="help/pssm.html">配送方式</a></div>
                         <div><a href="help/zxzf.html">支付方式</a></div>
@@ -179,7 +179,7 @@
                     </div>
                 </li>
                 <li class="webnavdh" style="background:none"><strong class="top_icon"><a href="javascript:;"> 网站导航 </a></strong>
-                    <div class="top_hidebox">
+                    <div class="top_hide_box">
                         <ul class="dh-list">
                             <li class="dh_title">
                                 <a href="javascript:;" style="padding-left:0;">生鲜食品</a>

@@ -2,8 +2,6 @@ package com.lonton.petstore.mappers;
 
 import com.lonton.petstore.entity.User;
 import java.util.Date;
-import java.util.List;
-
 import org.apache.ibatis.annotations.Arg;
 import org.apache.ibatis.annotations.ConstructorArgs;
 import org.apache.ibatis.annotations.Delete;
@@ -14,11 +12,6 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
-/**
- * asdf。
- *
- * @author
- */
 public interface UserMapper {
     @Delete({
         "delete from t_user",
@@ -34,7 +27,7 @@ public interface UserMapper {
         "created_time)",
         "values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, ",
         "#{password,jdbcType=CHAR}, #{gender,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, ",
-        "#{phone,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{salt,jdbcType=CHAR}, ",
+        "#{phone,jdbcType=CHAR}, #{avatar,jdbcType=VARCHAR}, #{salt,jdbcType=CHAR}, ",
         "#{grade,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{lastLogin,jdbcType=TIMESTAMP}, ",
         "#{createdTime,jdbcType=TIMESTAMP})"
     })
@@ -56,7 +49,7 @@ public interface UserMapper {
         @Arg(column="password", javaType=String.class, jdbcType=JdbcType.CHAR),
         @Arg(column="gender", javaType=Integer.class, jdbcType=JdbcType.INTEGER),
         @Arg(column="email", javaType=String.class, jdbcType=JdbcType.VARCHAR),
-        @Arg(column="phone", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="phone", javaType=String.class, jdbcType=JdbcType.CHAR),
         @Arg(column="avatar", javaType=String.class, jdbcType=JdbcType.VARCHAR),
         @Arg(column="salt", javaType=String.class, jdbcType=JdbcType.CHAR),
         @Arg(column="grade", javaType=Integer.class, jdbcType=JdbcType.INTEGER),
@@ -75,7 +68,7 @@ public interface UserMapper {
           "password = #{password,jdbcType=CHAR},",
           "gender = #{gender,jdbcType=INTEGER},",
           "email = #{email,jdbcType=VARCHAR},",
-          "phone = #{phone,jdbcType=VARCHAR},",
+          "phone = #{phone,jdbcType=CHAR},",
           "avatar = #{avatar,jdbcType=VARCHAR},",
           "salt = #{salt,jdbcType=CHAR},",
           "grade = #{grade,jdbcType=INTEGER},",
@@ -90,6 +83,4 @@ public interface UserMapper {
             "FROM t_user",
             "WHERE username = #{username}"})
     User getUserByUsername(String username);
-    
-    int insert(List<User> users);
 }

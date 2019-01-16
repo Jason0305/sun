@@ -86,7 +86,7 @@ public class UserServiceImpl implements IUserService {
     
     private String getEncryptedPassword(String password, String salt) {
         // 将加密后的原密码和加密后的盐值拼接然后再加密
-        String result = md5(md5(password) + md5(salt));
+        String result = md5(password) + md5(salt);
         // 将上述密文加密5次
         for (int i = 0; i < 6; i++) {
             result = md5(result);
@@ -99,7 +99,8 @@ public class UserServiceImpl implements IUserService {
         return DigestUtils.md5DigestAsHex(s.getBytes()).toUpperCase();
     }
     
-    private User getUserByUsername(String username) {
+    @Override
+    public User getUserByUsername(String username) {
         return userMapper.getUserByUsername(username);
     }
     
