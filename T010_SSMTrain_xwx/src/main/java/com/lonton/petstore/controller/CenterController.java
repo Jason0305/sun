@@ -1,6 +1,6 @@
 package com.lonton.petstore.controller;
 
-import com.lonton.petstore.entity.ResponseJson;
+import com.lonton.petstore.entity.ResponseResult;
 import com.lonton.petstore.services.exceptions.DataInsertException;
 import com.lonton.petstore.services.exceptions.PasswordNotMatchException;
 import com.lonton.petstore.services.exceptions.ServiceException;
@@ -8,6 +8,7 @@ import com.lonton.petstore.services.exceptions.UserNotFoundException;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -29,20 +30,24 @@ public class CenterController {
      */
     @ExceptionHandler(ServiceException.class)
     @ResponseBody
-    public ResponseJson<?> exceptionAction(Exception e) {
+    public ResponseResult<?> exceptionAction(Exception e) {
         log.info("exception");
         String msg = e.getMessage();
         if (e instanceof UserNotFoundException) {
-            return new ResponseJson<Void>(601, msg);
+            return new ResponseResult<Void>(601, msg);
         } else if (e instanceof PasswordNotMatchException) {
-            return new ResponseJson<Void>(602, msg);
+            return new ResponseResult<Void>(602, msg);
         } else if (e instanceof DataInsertException) {
-            return new ResponseJson<Void>(603, msg);
+            return new ResponseResult<Void>(603, msg);
         } else {
-            return new ResponseJson<>(600, "系统忙，请稍后重试！");
+            return new ResponseResult<>(600, "系统忙，请稍后重试！");
         }
     }
     
+    @RequestMapping(value="/index.do")
+    public String index(){
+        return "index";
+    }
     
     /**
      * 从Session中获取当前登录的用户的id。

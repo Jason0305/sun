@@ -10,19 +10,46 @@
     <script type="text/javascript" src="../plug-in/bootstrap-3.4.0-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/jquery.blockUI.js"></script>
     <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <style type="text/css">
         /*.login_content {*/
             /*width: 1015px;*/
             /*margin: 0 auto;*/
         /*}*/
+        /*body{*/
+            /*background: url("../images/login_body_bg_1.jpg");*/
+            /*background-size: 100%;*/
+            /*opacity: 90%;*/
+        /*}*/
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+        }
 
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1200px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
         .login_form {
             float: right;
             background: #fff;
             width: 425px;
             border: 1px solid #e5e5e5;
-            margin-top: 30px;
-            margin-right: 30px;
+            margin: 50px 30px 50px auto;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             padding: 15px 35px 35px;
             position: relative;
@@ -93,19 +120,24 @@
             background-position: 0 -80px;
             margin-right: 10px;
         }
+
     </style>
 </head>
 <body>
 
 <!--引入顶部导航栏start-->
 <script type="text/javascript">
-    $("body").append($("<div id='header_navbar'></div>").load("header_navbar.html"));
+    $("body").append($("<header id='header_navbar'></header>").load("header_navbar.html"));
 </script>
 <!--引入顶部导航栏end-->
 
 <!--登录模块start-->
-<div class="container login_content">
-    <div class="container login_form">
+<section class="container login_content">
+    <!--<div class="container"><img src="../images/login_bg_1.jpg" alt="登录首页背景图" style="width:600px;position: absolute;left:70px;top:150px;z-index: -4;"></div>-->
+        <!--<h1>Hello,world!</h1>-->
+        <!--<p>欢迎来到宠物商城</p>-->
+        <!--<button class="btn btn-info" type="button">Message</button>-->
+    <div class="container login_form" style="float:right;">
         <form id="loginForm" role="form" class="">
             <span><h4>宠物商城</h4></span>
             <!--用户名输入start-->
@@ -177,7 +209,7 @@
             <!--快捷登录-->
         </form>
     </div>
-</div>
+</section>
 <script type="text/javascript" src="../js/login.js"></script>
 <!--登录模块end-->
 

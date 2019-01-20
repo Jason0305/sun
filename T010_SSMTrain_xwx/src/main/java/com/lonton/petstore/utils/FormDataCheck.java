@@ -29,7 +29,6 @@ public class FormDataCheck {
     private String num     = "^[0-9]*$";
     //正整数
     private String n       = "^\\+?[1-9][0-9]*$";
-    
     /**
      * 校验表单
      * @return asdf

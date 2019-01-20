@@ -31,17 +31,25 @@
     <!-- 视图解析器1:jsp视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--配置前缀-->
-        <property name="prefix" value="/WEB-INF/"/>
+        <property name="prefix" value="/WEB-INF/VIEW/JSP/"/>
         <!--配置后缀-->
         <property name="suffix" value=".jsp"/>
-        <property name="order" value="1"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="order" value="3"/>
     </bean>
     <!-- 视图解析器2:html视图解析器 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!--配置前缀-->
-        <property name="prefix" value="/"/>
-        <!--配置后缀-->
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/VIEW/HTML/"/>
+        <!-- 设置页面中文乱码问题 -->
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="defaultEncoding">UTF-8</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="htmlViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <property name="suffix" value=".html"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
         <property name="order" value="0"/>
     </bean>
 
@@ -66,7 +74,6 @@
             <bean class="com.lonton.petstore.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
-
 
 
     <!--能支持SpringMVC更高级的一些功能，如JSR303校验，快捷的ajax...-->

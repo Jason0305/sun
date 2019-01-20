@@ -20,10 +20,10 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
-    <!--读取jdbc.properties的数据库连接配置信息-->
+    <!-- 引入数据源配置文件 -->
     <util:properties id="jdbc" location="classpath:Spring/jdbc.properties"/>
 
-    <!--根据上述读取到的数据库配置配置信息，配置数据源-->
+    <!-- dataSource数据源配置 -->
     <bean id="basicDataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <!--name为MapperScannerConfigurer对象的属性，value为上述id为jdbcConfig读取到的jdbc.properties内容-->
         <property name="url"
@@ -40,14 +40,14 @@
                   value="#{jdbc.maxActive}"/>
     </bean>
 
-    <!--配置MapperScannerConfigurer-->
+    <!-- dao层配置 -->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--指定MyBatis接口配置文件位置-->
         <property name="basePackage" value="com.lonton.petstore.mappers"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
-    <!--配置SqlSessionFactoryBean-->
+    <!-- sessionFactory工厂配置 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--配置使用数据源-->
         <property name="dataSource" ref="basicDataSource"/>
@@ -58,7 +58,7 @@
 
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg name="sqlSessionFactory" index="0" ref="sqlSessionFactory"/>
-        <constructor-arg name="executorType" index="1" value="BATCH" />
+        <constructor-arg name="executorType" index="1" value="BATCH"/>
     </bean>
 
     <!--配置事务管理器-->
@@ -69,4 +69,28 @@
 
     <!--注解驱动-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+    <!-- 配置事物的传播性 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <!-- 传播行为 -->
+            <!-- REQUIRED:支持当前事务，如果当前没有事务，就新建一个事务；
+                 SUPPORTS：支持当前事务，如果当前没有事务，就以非事务的方式执行
+             -->
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="insert*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="query*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+
+    <!-- 配置aop切面 -->
+    <!--<aop:config>-->
+        <!--<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.cn.su.service.impl.*.*(..))"/>-->
+    <!--</aop:config>-->
 </beans>

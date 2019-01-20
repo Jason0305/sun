@@ -30,9 +30,6 @@ import java.util.UUID;
 @ContextConfiguration(locations = {"classpath*:Spring/spring-*.xml"})
 public class GeneratorDataTest {
     @Autowired
-    private CartMapper cartMapper;
-    private Cart cart;
-    @Autowired
     private DistrictMapper districtMapper;
     private District district;
     @Autowired
