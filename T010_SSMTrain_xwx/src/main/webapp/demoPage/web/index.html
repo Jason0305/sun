@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
+    <link rel="bookmark" href="../images/favicon.ico" type="image/x-icon"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../js/publicNav.js"></script>
+    <script type="text/javascript" src="../js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $("body")
+            .append($("<div id='top_block'></div>").load("page_top.html"))
+            .append($("<div id='header_block'></div>").load("page_header.html"))
+            .append($("<div id='body_block'></div>")
+                .append($("<div id='menuScroll_block'></div>").load("page_menuScroll.html"))
+                .append($("<div id='goodsFloor'></div>").load("page_goodsFloor.html")))
+            .append($("<div id='rightBar'></div>").load("page_rightBar.html"))
+            .append($("<div id='rightBar'></div>").load("page_footerSearch.html"))
+                .append($("<div id=footer''></div>").load("page_footer.html"));
+
+
+    })
+</script>
+</body>
+</html>

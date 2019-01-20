@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<p>
+    <input id="demo_input" type="text" placeholder="用户名">
+    <span id="demo_input1">demo1</span>
+    <span>demo2</span>
+    <div id="demo" class="demo_div" style="background-color:red;width:200px;height:200px;">demo3</div>
+</p>
+<!--<p>Hello</p>-->
+<!--<p class="selected">Hello Again</p>-->
+<!--<div><span>And Again</span></div>-->
+<script type="text/javascript">
+    $(function () {
+        $("#demo_input").nextAll("div:first").text("success");
+        // $("p").next(".selected")
+    })
+</script>
+</body>
+</html>

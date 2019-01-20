@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--footer搜索start-->
+<div class="indexContFooter">
+    <div class="fsac">
+        <div class="footersearch">
+            <script type="text/javascript">
+                function checkSearchForm() {
+                    if (document.getElementById('footerkeywords').value) {
+                        return true;
+                    } else {
+                        alert("请输入搜索关键词！");
+                        return false;
+                    }
+                }
+            </script>
+            <form onsubmit="return checkSearchForm()" method="get">
+                <input id="footerkeywords" class="footerkeyword " type="text" value="请输入你要查找的商品"
+                       placeholder="请输入你要查找的商品" onclick="this.value=''">
+                <input class="btfootersearch" type="submit" value="搜索">
+            </form>
+            <div class="footersearch_hot">
+                <dl>
+                    <dt>热门搜索：</dt>
+                    <dd><a href="javascript:;">香米</a></dd>
+                    <dd><a href="javascript:;">水果</a></dd>
+                    <dd><a href="javascript:;">饼干</a></dd>
+                    <dd><a href="javascript:;">牛肉</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer搜索end-->
+</body>
+</html>

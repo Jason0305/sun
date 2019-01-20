@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../js/publicNav.js"></script>
+    <script type="text/javascript" src="../js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js"></script>
+</head>
+
+<body>
+<!--引入top_block-->
+<script type="text/javascript">
+    $("body").append($("<div id='top_block'></div>").load("page_top.html"))
+        .append($("<div id='header_block'></div>").load("page_header.html"));
+</script>
+<!--引入top_block-->
+
+<!--注册表单start-->
+<div class="register_box">
+    <form id="registerForm">
+        <div class="group">
+            <p>用户名</p>
+            <input type="text" name="username" placeholder="请输入用户名"/>
+            <span class="correct"></span>
+        </div>
+        <div class="group">
+            <p>输入密码</p>
+            <input type="text" name="password" placeholder="请输入密码" value="123abc"/>
+            <span class="error">密码由6-16的字母、数字、符号组成</span>
+        </div>
+        <div class="group">
+            <p>确认密码</p>
+            <input type="text" placeholder="请再次确认密码" value="123abc"/>
+            <span class="error">密码不一致，请重新输入</span>
+        </div>
+        <div class="group">
+            <p>性别</p>
+            <input type="radio" class="" name="gender" id="male" value="1" checked="checked">
+            <label for="male">男</label>
+            <input type="radio" name="gender" id="female" value="0">
+            <label for="female">女</label>
+        </div>
+        <div class="group group3">
+            <p>手机号</p>
+            <input type="text" name="phone" placeholder="请输入手机号码" value="13166668888"/>
+        </div>
+        <div class="psw psw2">
+            <p class="psw-p1">短信验证码</p>
+            <input type="text" placeholder="请输入手机验证码"/>
+            <button>获取短信验证码</button>
+        </div>
+        <div class="group group3">
+            <p>邮箱</p>
+            <input type="text" name="email" placeholder="请输入邮箱" value="666777888@qq.com"/>
+        </div>
+        <div class="group group3">
+            <p>邮箱验证码</p>
+            <!--<input type="text" placeholder="请输入邮箱验证码"/>
+            <button>获取邮箱验证码</button>-->
+        </div>
+        <!--<div class="group psw4">
+            <p>验证码</p>
+            <input type="text" placeholder="请输入验证码"/>
+            <span class="verification_code">
+                <div class="yz-tu f-l">
+                    <img src="../images/psw_verification_code.gif" alt=""/>
+                </div>
+                <p class="f-l">看不清？<a href="#">换张图</a></p>
+                <div style="clear:both;"></div>
+            </span>
+        </div>-->
+        <!--<div class="agreement">
+            <input type="checkbox" name="agreement"/>
+            <p>我有阅读并同意<span>《宠物商城服务协议》</span></p>
+        </div>-->
+        <button type="button" class="reg_btn" id="register">立即注册</button>
+        <p class="sign-in">已有账号?<a href="login.html">现在登录</a></p>
+    </form>
+</div>
+<script type="text/javascript">
+    register.onclick = function () {
+        $.ajax({
+            url: "${pageContext.servletContext.contextPath}/user/register.do",
+            data: $("#registerForm").serialize(),
+            type: "get",
+            dataType: "json",
+            beforeSend: function () {
+                console.log("send Before...");
+            },
+            success: function (data) {
+                console.log("response success...");
+                if (data.status === 600) {
+                    location.href = "index.html";
+                } else {
+                    alert("未知错误！");
+                }
+                setTimeout($.unblockUI, 200);
+            }
+        });
+    };
+
+    
+    
+    //1、校验用户名
+    function validate_username(obj) {
+        var empName = obj.val();
+        var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,5})/;
+        if (!regName.test(empName)) {
+            alert("邮箱格式不正确");
+            return false;
+        } else {
+            alert("邮箱格式正确")
+        }
+        ;
+    }
+
+    //2、校验邮箱信息
+    function validate_email(obj) {
+        var email = obj.val();
+        var regEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        if (!regEmail.test(email)) {
+            alert("邮箱格式不正确");
+            return false;
+        } else {
+            alert("邮箱格式正确")
+        }
+        return true;
+    }
+
+
+</script>
+<!--注册表单end-->
+
+<!--引入footer_block-->
+<script type="text/javascript">
+    $(function () {
+        $("body").append($("<div id='rightBar'></div>").load("page_rightBar.html"))
+            .append($("<div id=footer''></div>").load("page_footer.html"));
+    })
+</script>
+<!--引入footer_block-->
+</body>
+</html>

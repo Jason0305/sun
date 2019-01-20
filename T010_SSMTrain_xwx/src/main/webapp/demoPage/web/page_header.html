@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!--头部top-->
+<div class="header">
+    <div class="logo"><img src="../images/logos.gif" width="260" height="75"/>
+        <div class="logo-text"><span>**</span>宠物在线商城</div>
+    </div>
+    <div class="search">
+        <script type="text/javascript">
+            function checkSearchForm() {
+                if (document.getElementById('keywords').value) {
+                    return true;
+                } else {
+                    alert("请输入搜索关键词！");
+                    return false;
+                }
+            }
+        </script>
+        <form onsubmit="return checkSearchForm()" method="get">
+            <input id="keywords" class="keyword " type="text" value="请输入你要查找的商品" placeholder="请输入你要查找的商品"
+                   onclick="this.value=''"/>
+            <input class="search_btn" type="submit" value="搜索"/>
+        </form>
+        <div class="search_hot">
+            <dl>
+                <dt>热门搜索：</dt>
+                <dd><a href="javascript:;">宠物狗</a></dd>
+                <dd><a href="javascript:;">柯基</a></dd>
+                <dd><a href="javascript:;">鹦鹉</a></dd>
+                <dd><a href="javascript:;">仓鼠</a></dd>
+                <dd><a href="javascript:;">小老虎</a></dd>
+                <dd><a href="javascript:;">柴犬</a></dd>
+            </dl>
+        </div>
+    </div>
+
+    <!--**********购物车*********************-->
+    <div class="shopCar">
+        <ul class="shopCont">
+            <li class="webnav">
+
+        <span class="total-num-box" id="J_total_num_box">
+          <b class="total-num J_cart_total_num" id="showTotalQty">0</b>
+          <span class="total-num-bg-box">
+            <em></em>
+            <i></i>
+          </span>
+        </span>
+
+                <strong>
+                    <a href="javascript:;" class="shopClick down-hover"><span>购物车</span></a>
+                </strong>
+                <div class="shopBox" style="display:none;">
+                    <div class="shopBady">最近加入的宝贝</div>
+                    <ul>
+                        <li class="clearfix sList"><a class="sImg" href="#"><img src="../images/zzrcarfa.jpg" alt=""/></a>
+                            <div class="shopName">
+                                <div class="shopName1">小保养小保养小保养...</div>
+                                <div class="shopName2">东昊养护店</div>
+                            </div>
+                            <div class="shopRemove">
+                                <div class="shopjg">￥118</div>
+                                <div class="removeBtn">删除</div>
+                            </div>
+                        </li>
+                        <li class="clearfix sList"><a class="sImg" href="#"><img src="../images/zzrcarfa.jpg" alt=""/></a>
+                            <div class="shopName">
+                                <div class="shopName1">小保养小保养小保养...</div>
+                                <div class="shopName2">东昊养护店</div>
+                            </div>
+                            <div class="shopRemove">
+                                <div class="shopjg">￥118</div>
+                                <div class="removeBtn">删除</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="lookSBtn"><a href="../cart.html">查看我的购物车</a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/shopCar.js"></script>
+    <!--*********购物车**********************-->
+
+</div>
+<!--头部top]]-->
+</body>
+</html>
