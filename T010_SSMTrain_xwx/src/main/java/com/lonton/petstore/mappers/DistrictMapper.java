@@ -1,6 +1,5 @@
 package com.lonton.petstore.mappers;
 
-import com.lonton.petstore.entity.Address;
 import com.lonton.petstore.entity.District;
 import org.apache.ibatis.annotations.Arg;
 import org.apache.ibatis.annotations.ConstructorArgs;
@@ -11,6 +10,8 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
+
+import java.util.List;
 
 public interface DistrictMapper {
     @Delete({
@@ -71,11 +72,8 @@ public interface DistrictMapper {
     int updateByPrimaryKey(District record);
     
     @Select({"SELECT id, parent, code, name FROM `t_district` WHERE CODE NOT LIKE '___000' order by rand() limit 1"})
-    @ConstructorArgs({
-            @Arg(column = "id", javaType = Integer.class, jdbcType = JdbcType.INTEGER, id = true),
-            @Arg(column = "parent", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "code", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "name", javaType = String.class, jdbcType = JdbcType.VARCHAR)
-    })
     District selectRandomArea();
+    
+    @Select({"select id, parent, code, name from t_district where parent = #{code,jdbcType=VARCHAR}"})
+    List<District> selectDistrictByParent(String parent);
 }
