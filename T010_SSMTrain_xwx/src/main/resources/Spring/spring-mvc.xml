@@ -28,31 +28,42 @@
     </context:component-scan>
 
     <!--=================== 配置视图解析器 ================-->
-    <!-- 视图解析器1:jsp视图解析器 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!--配置前缀-->
-        <property name="prefix" value="/WEB-INF/VIEW/JSP/"/>
-        <!--配置后缀-->
-        <property name="suffix" value=".jsp"/>
-        <property name="contentType" value="text/html;charset=UTF-8"/>
-        <property name="order" value="3"/>
-    </bean>
-    <!-- 视图解析器2:html视图解析器 -->
+    <!--===== 视图解析器1:html视图解析器 ======-->
+    <!--配置freeMarker模板路径-->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <property name="templateLoaderPath" value="/WEB-INF/VIEW/HTML/"/>
+        <property name="templateLoaderPath" value="/views/html/"/>
         <!-- 设置页面中文乱码问题 -->
         <property name="freemarkerSettings">
             <props>
                 <prop key="defaultEncoding">UTF-8</prop>
+                <!-- 设置页面中文乱码问题 -->
+                <!--<prop key="default_encoding">UTF-8</prop>-->
+                <!--模板的编码格式 -->
+                <!--<prop key="locale">UTF-8</prop>-->
+                <!-- 本地化设置 -->
+                <!--<prop key="url_escaping_charset">UTF-8</prop>-->
+                <prop key="template_update_delay">3600</prop>
             </props>
         </property>
     </bean>
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+    <!-- 配置html的freeMarker视图解析器 -->
     <bean id="htmlViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="suffix" value=".html"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
         <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="cache" value="true"/>
+        <property name="suffix" value=".html"/>
         <property name="order" value="0"/>
     </bean>
-
+    <!--======== 视图解析器2:jsp视图解析器 ========-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--配置前缀-->
+        <property name="prefix" value="/WEB-INF/views/jsp/"/>
+        <!--配置后缀-->
+        <property name="suffix" value=".jsp"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="order" value="1"/>
+    </bean>
 
     <!-- 配置拦截器链 -->
     <mvc:interceptors>
@@ -84,6 +95,11 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-
+    <mvc:default-servlet-handler />
+    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/images/**" location="/images/"/>
+    <mvc:resources mapping="/plug-in/**" location="/plug-in/"/>
+    <!--<mvc:resources mapping="/user/**" location="/static/"/>-->
 
 </beans>

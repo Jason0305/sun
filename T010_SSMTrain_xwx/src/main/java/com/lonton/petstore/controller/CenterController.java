@@ -49,6 +49,16 @@ public class CenterController {
         return "index";
     }
     
+    @RequestMapping(value="/header_navbar.do")
+    public String headerNavbar(){
+        return "header_navbar";
+    }
+    
+    @RequestMapping(value="/footer_navbar.do")
+    public String footerNavbar(){
+        return "footer_navbar";
+    }
+    
     /**
      * 从Session中获取当前登录的用户的id。
      *

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="plug-in/bootstrap-3.4.0-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="shortcut icon" href=images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="plug-in/bootstrap-3.4.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+</head>
+<body>
+<!--引入顶部导航栏start-->
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top header_nav" role="navigation">
+    <div class="container nav_header">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand projectName">
+                <span><img src="images/logo.png" alt="" width="20" height="20"></span>
+                <span>宠物商城</span>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#nav_title" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="nav_title">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-star navCollectionIcon"></span>
+                        <span data-toggle="tooltip" data-placement="bottom" title=""
+                              data-original-title="收藏会有惊喜哦">收藏本网站</span>
+                    </a>
+                </li>
+                <li class="mobile_QR_code">
+                    <a href="javascript:;" data-link-color="orange">
+                        <span class="fa fa-mobile fa-lg navCollectionIcon"></span>
+                        <span>手机客户端</span>
+                        <span class="caret"></span>
+                        <img src="images/mobile_download.png" width="130" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="javascript:;" class="fa fa-user dropdown-toggle" data-toggle="dropdown"> 个人中心</a>
+                    <ul class="dropdown-menu dropdown-menu-left" role="menu" style="min-width:100%">
+                        <li><a href="javascript:;">个人资料</a></li>
+                        <li><a href="javascript:;">收货地址</a></li>
+                        <li><a href="javascript:;">修改密码</a></li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:;">切换账号</a></li>
+                        <li><a href="javascript:;">退出登录</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="fa fa-shopping-cart text-info"></span>
+                        <span> 购物车</span>
+                        <span class="badge badge-danger">100</span>
+                        <ul class="dropdown-menu dropdown-menu-left group_list" role="menu" style="min-width: max-content">
+                            <li style="">
+                                <div>
+                                    <div class="img">
+                                        <img src="images/shopping_cart.jpg" alt="">
+                                    </div>
+                                    <div class="content" width="100">
+                                        <p><a href="#">宠物名称</a></p>
+                                        <p>宠物类型:柯基8255</p>
+                                    </div>
+                                    <div class="Operations">
+                                        <p class="Price">￥55.00</p>
+                                        <p><a href="#">删除</a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="img"><img src="images/shopping_cart.jpg" alt=""></div>
+                                    <div class="content"><p><a href="#">宠物名称</a></p>
+                                        <p>宠物类型:柯基8255</p></div>
+                                    <div class="Operations">
+                                        <p class="Price">￥55.00</p>
+                                        <p><a href="#">删除</a></p></div>
+                                </div>
+                            </li>
+                            <!--<li>-->
+                            <!--<button type="button" class="btn btn-outline-info btn-block">购买</button>-->
+                            <!--</li>-->
+                            <li role="separator" class="divider"></li>
+                            <li class="">
+                                <div class="shopping_style">
+                                    <div class="p-total">共<b>1</b>件商品　共计<strong>￥ 515.00</strong></div>
+                                    <a href="#" title="去购物车结算" id="btn-payforgoods" class="Shopping">去购物车结算</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-heart"></span> 收藏夹
+                    </a>
+                </li>
+                <li id="help_select" class="dropdown">
+
+                    <a href="http://www.baidu.com" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="icon-heart">帮助中心</span>
+                        <span class="caret"></span>
+                        <ul class="dropdown-menu dropdown-menu-left" role="menu" style="min-width:100%">
+                            <li><a href="javascript:;">购物流程</a></li>
+                            <li><a href="javascript:;">配送方式</a></li>
+                            <li><a href="javascript:;">支付方式</a></li>
+                            <li><a href="javascript:;">售后服务</a></li>
+                        </ul>
+                    </a>
+                </li>
+                <li><a href="user/login.do" class="" data-toggle="tooltip" data-placement="bottom" title=""
+                       data-original-title="你好,请先登录">登录</a></li>
+                <li><a href="javascript:;" class="" data-toggle="tooltip" data-placement="bottom" title=""
+                       data-original-title="没有账号?注册一个">免费注册</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $("[data-toggle='tooltip']").tooltip();
+        $(document).off('click.bs.dropdown.data-api');
+        $(document).ready(function () {
+            dropdownOpen();//调用
+        });
+
+        /**
+         * 鼠标划过就展开子菜单，免得需要点击才能展开
+         */
+        function dropdownOpen() {
+            const $dropdownLi = $('li.dropdown');
+
+            $dropdownLi.mouseover(function () {
+                $(this).addClass('open');
+            }).mouseout(function () {
+                $(this).removeClass('open');
+            });
+        }
+
+    </script>
+</nav>
+<!--页头-->
+<div class="page-header container">
+    <h1>宠物商城
+        <small>欢迎您</small>
+    </h1>
+</div>
+<!--引入顶部导航栏end-->
+<div class="container">
+    <div id="carousel_box" class="carousel slide" data-ride="carousel" data-interval="4000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel_box" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel_box" data-slide-to="1"></li>
+            <li data-target="#carousel_box" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a href="javascript:;">
+                    <img src="images/slide_img1.jpg" height="357" alt=""/>
+                </a>
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item">
+                <a href="javascript:;">
+                    <img src="images/slide_img1.jpg" alt=""/>
+                </a>
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item">
+                <a href="javascript:;">
+                    <img src="images/slide_img1.jpg"/>
+                </a>
+                <div class="carousel-caption">
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel_box" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel_box" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <span style="font-size: 30px;padding-left:33px;">
+            热门商品   <img src="images/login_bg_1.jpg" height="30" width="80%">
+        </span>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-2 hidden-xs hidden-sm" style="height: 400px;">
+            <img src="images/login_bg_1.jpg" height="100%" width="100%">
+        </div>
+        <div class="col-md-10 col-sm-10" style="padding-left: 10px;">
+            <div class="row">
+                <div class="col-md-6 hidden-xs hidden-sm" style="height:200px;width: 480px;">
+                    <div class="thumbnail">
+                        <img src="images/bomei_white.jpg" height="100%" width="100%"/>
+                        <div class="caption" style="position:absolute;">
+                            <h3>博美宠物犬</h3>
+                            <p>纯种博美，居家必备！<span class="badger text-danger label-info h2"><b>￥999.00</b></span></p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">收藏</a>
+                                <a href="#" class="btn btn-default" role="button">购买</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6" align="center">
+                    <div class="thumbnail">
+                        <img src="images/bomei_white.jpg"/>
+                        <div class="caption">
+                            <h3>博美宠物犬</h3>
+                            <p>纯种博美，居家必备！<span class="badger text-danger label-info h2"><b>￥999.00</b></span></p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">收藏</a>
+                                <a href="#" class="btn btn-default" role="button">购买</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6" align="center">
+                    <div class="thumbnail">
+                        <img src="images/bomei_white.jpg"/>
+                        <div class="caption">
+                            <h3>博美宠物犬</h3>
+                            <p>纯种博美，居家必备！<span class="badger text-danger label-info h2"><b>￥999.00</b></span></p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">收藏</a>
+                                <a href="#" class="btn btn-default" role="button">购买</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-6" align="center">
+                    <div class="thumbnail">
+                        <img src="images/bomei_white.jpg"/>
+                        <div class="caption">
+                            <h3>博美宠物犬</h3>
+                            <p>纯种博美，居家必备！<span class="badger text-danger label-info h2"><b>￥999.00</b></span></p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">收藏</a>
+                                <a href="#" class="btn btn-default" role="button">购买</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6" align="center">
+                    <div class="thumbnail">
+                        <img src="images/bomei_white.jpg"/>
+                        <div class="caption">
+                            <h3>博美宠物犬</h3>
+                            <p>纯种博美，居家必备！<span class="badger text-danger label-info h2"><b>￥999.00</b></span></p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">收藏</a>
+                                <a href="#" class="btn btn-default" role="button">购买</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6" align="center">
+                    <div class="thumbnail">
+                        <img src="images/bomei_white.jpg"/>
+                        <div class="caption">
+                            <h3>博美宠物犬</h3>
+                            <p>纯种博美，居家必备！<span class="badger text-danger label-info h2"><b>￥999.00</b></span></p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">收藏</a>
+                                <a href="#" class="btn btn-default" role="button">购买</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6" align="center">
+                    <div class="thumbnail">
+                        <img src="images/bomei_white.jpg"/>
+                        <div class="caption">
+                            <h3>博美宠物犬</h3>
+                            <p>纯种博美，居家必备！<span class="badger text-danger label-info h2"><b>￥999.00</b></span></p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">收藏</a>
+                                <a href="#" class="btn btn-default" role="button">购买</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h1>撒打发斯蒂1111111111111111芬</h1>
+<h1>撒打发斯蒂1111111111111111芬</h1>
+<!--引入底部导航start-->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <div id="navbar" class="collapse navbar-collapse">
+            <div class="col-md-10">
+                <ul class="col-md-3">
+                    <li><span class=""></span>购物指南</li>
+                    <li><a href="javascript:;">购物流程</a></li>
+                    <li><a href="javascript:;">会员介绍</a></li>
+                    <li><a href="javascript:;">团购/活动</a></li>
+                    <li><a href="javascript:;">宠物护理</a></li>
+                    <li><a href="javascript:;">常见问题</a></li>
+                    <li><a href="javascript:;">联系客服</a></li>
+                </ul>
+                <ul class="col-md-3">
+                    <li><span class=""></span>配送方式</li>
+                    <li><a href="javascript:;">上门自提</a></li>
+                    <li><a href="javascript:;">211限时达</a></li>
+                    <li><a href="javascript:;">配送服务查询</a></li>
+                    <li><a href="javascript:;">配送费收取标准</a></li>
+                    <li><a href="javascript:;">海外配送</a></li>
+                </ul>
+                <ul class="col-md-3">
+                    <li><span class=""></span>支付方式</li>
+                    <li><a href="javascript:;">货到付款</a></li>
+                    <li><a href="javascript:;">在线支付</a></li>
+                    <li><a href="javascript:;">分期付款</a></li>
+                    <li><a href="javascript:;">银行汇款</a></li>
+                    <li><a href="javascript:;">公司转账</a></li>
+                </ul>
+                <ul class="col-md-3">
+                    <li><span class=""></span>售后服务</li>
+                    <li><a href="javascript:;">售后说明</a></li>
+                    <li><a href="javascript:;">价格保护</a></li>
+                    <li><a href="javascript:;">退款说明</a></li>
+                    <li><a href="javascript:;">退换规则</a></li>
+                    <li><a href="javascript:;">取消订单</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul>
+                    <li>关注我们</li>
+                    <li>
+                        <div>
+                            <a href="javascript:;">
+                                <img src="images/QR_code.png" class="img-responsive" width="234" height="233" alt="">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav navbar-nav col-md-12" style="text-align:center;">
+            <span href="javascript:;">关于我们</span>|
+            <span href="javascript:;">联系我们</span>|
+            <span href="javascript:;">友情链接</span>|
+            <span href="javascript:;">免责条款</span>|
+            <span href="javascript:;">广告服务</span>|
+            <span href="javascript:;">商品流通许可证</span>|
+            <span href="javascript:;">营业执照</span>
+        </div>
+        <div>
+            <p class="nav navbar-nav col-md-12" style="text-align:center;"> Copyright © 2014-2019 5RICE.宠吾网 版权所有
+                鄂ICP备11002788号 保留一切权利。
+                客服热线：400-400-6666 </p>
+            <p class="nav navbar-nav col-md-12" style="text-align:center;"> 鄂公网安备 110105001608 | 鄂ICP证111033号 |
+                商品流通许可证 SP1101051110165515（1-1） | 营业执照 </p>
+            <p class="nav navbar-nav col-md-12" style="text-align:center;">
+                <a href="javascript:;">
+                    <img src="images/footerbomX.gif" width="108" height="40">
+                </a>
+                <a href="javascript:;">
+                    <img src="images/footerbomC.png" width="112" height="40">
+                </a>
+            </p>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</nav>
+<!--引入底部导航end-->
+</body>
+</html>
