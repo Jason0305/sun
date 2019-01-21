@@ -25,7 +25,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         // 判断session中是否有登录信息
         if (session.getAttribute("username") == null) {
             // 没有登录信息，则：重定向到登录页
-            response.sendRedirect(request.getContextPath() + "/login.html");
+            response.sendRedirect(request.getContextPath() + "/user/login.do");
             // 执行拦截
             return false;
         } else {

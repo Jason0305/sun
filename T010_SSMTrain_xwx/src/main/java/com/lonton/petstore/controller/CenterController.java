@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
  */
 @Log4j
 @Controller
+@RequestMapping
 public class CenterController {
     
     /**

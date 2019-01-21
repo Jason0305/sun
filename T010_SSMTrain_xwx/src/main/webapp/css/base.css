@@ -1,0 +1,214 @@
+/*==================导航栏==================*/
+body {
+    padding-top: 51px;
+}
+
+.header_nav {
+    padding-top: 0;
+    height: 40px;
+}
+
+nav {
+    color: purple;
+}
+
+.navCollectionIcon {
+    color: orange;
+}
+
+#help_select .dropdown-toggle:hover .dropdown-menu {
+    display: block;
+}
+
+.shopping_style {
+    padding: 5px;
+    overflow: hidden;
+    text-align: right;
+    background: #F5F5F5;
+}
+
+.Shopping {
+    float: right;
+    height: 29px;
+    padding: 0 10px;
+    background: #E4393C;
+    color: #FFF;
+    text-align: center;
+    font-weight: 700;
+    line-height: 29px;
+    border-radius: 3px;
+}
+
+.Operations {
+    float: right;
+    text-align: right
+}
+
+.img {
+    text-align: center;
+    margin-right: 10px;
+    float: left;
+}
+
+.content {
+    float: left;
+    color: #999999
+}
+
+.Price {
+    color: #FF0000
+}
+
+.img img {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.p-total {
+    float: left;
+    line-height: 29px;
+}
+
+.mobile_QR_code img {
+    display: none;
+}
+
+.mobile_QR_code:hover img {
+    display: block;
+}
+/*===============导航栏================*/
+
+
+/*===============关于我们================*/
+.footer_nav {
+    padding-top: 20px;
+}
+/*===============关于我们================*/
+
+/*===============登录================*/
+/*.login_content {*/
+/*width: 1015px;*/
+/*margin: 0 auto;*/
+/*}*/
+/*body{*/
+/*background: url("../images/login_body_bg_1.jpg");*/
+/*background-size: 100%;*/
+/*opacity: 90%;*/
+/*}*/
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.login_form {
+    float: right;
+    background: #fff;
+    width: 425px;
+    border: 1px solid #e5e5e5;
+    margin: 50px 30px 50px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    padding: 15px 35px 35px;
+    position: relative;
+}
+
+.login_form input:not([type="checkbox"]) {
+    /*width: 280px;*/
+    /*height: 34px;*/
+    /*line-height: 34px;*/
+    /*color: #434343;*/
+    /*padding-left: 35px;*/
+    /*position: relative;*/
+}
+
+.login_form .form-group {
+    /*min-height: 68px;*/
+    /*position: relative;*/
+}
+
+.form-group .action_success {
+    color: forestgreen;
+}
+
+.login_form .action_error {
+    color: crimson;
+}
+
+.login_form .a {
+    color: #fff;
+    font-size: 16px;
+    line-height: 46px;
+}
+
+#loginBtn {
+    height: 46px;
+}
+
+.login_form .fast_login h3, .login_form .fast_login h4 {
+    /*color: #fff;*/
+    /*font-size: 16px;*/
+    /*line-height: 46px;*/
+}
+
+.login_form .checkbox > span:last-of-type {
+    color: orange;
+    float: right;
+}
+
+.login_form .fast_login {
+    margin-top: 15px;
+    line-height: 46px;
+}
+
+.fast_login .fast_way a {
+    float: left;
+    width: 100px;
+    height: 35px;
+    background: url(../images/login_fast.png) no-repeat 0 0;
+}
+
+.fast_login .fast_way a.sina_way {
+    background-position: 0 -40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.fast_login .fast_way a.weixin_way {
+    background-position: 0 -80px;
+    margin-right: 10px;
+}
+/*===============登录================*/
+
+
+/*===============首页================*/
+/*===============首页================*/
+
+/*===============注册================*/
+.reg_form {
+    width: 700px;
+    margin: 50px auto 0;
+}
+/*===============注册================*/
+
+/*===============购物车================*/
+/*===============购物车================*/

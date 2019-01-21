@@ -20,19 +20,35 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/user")
 public class UserController extends CenterController {
     
+    /**
+     * 用户业务层实例。
+     */
     @Autowired
     private IUserService userService;
     
+    /**
+     * 注册页面。
+     */
     @RequestMapping("/reg.do")
     private String register() {
-        return "register";
+        return "reg";
     }
     
+    /**
+     * 注册处理。
+     *
+     * @param username 用户名
+     * @param password 密码
+     * @param gender 性别
+     * @param phone 电话
+     * @param email 邮箱
+     * @return json对象
+     */
     @ResponseBody
     @RequestMapping(value = "/handle_reg.do", method = RequestMethod.GET)
     private ResponseResult registerAction(@RequestParam("username") String username,
                                           @RequestParam("password") String password,
-                                          @RequestParam(value = "gender", required = false,defaultValue = "1") int gender,
+                                          @RequestParam(value = "gender", required = false, defaultValue = "1") int gender,
                                           String phone, String email) {
         //        userService.checkUsername(username);
         //        userService.checkPassword(password);
@@ -56,7 +72,6 @@ public class UserController extends CenterController {
     }
     
     /**
-     *
      * @return 返回html页面
      */
     @RequestMapping("/login.do")
@@ -65,6 +80,13 @@ public class UserController extends CenterController {
         return "login";
     }
     
+    /**
+     * 登录处理。
+     * @param username 用户名
+     * @param password 密码
+     * @param session HttpSession
+     * @return json
+     */
     @ResponseBody
     @RequestMapping(value = "/handle_login.do", method = RequestMethod.GET)
     private ResponseResult loginAction(@RequestParam("username") String username,
@@ -78,4 +100,15 @@ public class UserController extends CenterController {
         return new ResponseResult<User>(user);
     }
     
+    /**
+     * 处理退出登录请求.
+     * @param session
+     */
+    @ResponseBody
+    @RequestMapping(value = "/login_out.do")
+    private void loginOutAction(HttpSession session) {
+        session.removeAttribute("uid");
+        session.removeAttribute("username");
+        //        return new ResponseResult<>();
+    }
 }

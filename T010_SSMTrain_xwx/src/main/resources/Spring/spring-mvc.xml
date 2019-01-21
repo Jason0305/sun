@@ -31,7 +31,7 @@
     <!--===== 视图解析器1:html视图解析器 ======-->
     <!--配置freeMarker模板路径-->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <property name="templateLoaderPath" value="/views/html/"/>
+        <property name="templateLoaderPath" value="/WEB-INF/views/html/"/>
         <!-- 设置页面中文乱码问题 -->
         <property name="freemarkerSettings">
             <props>
@@ -42,7 +42,7 @@
                 <!--<prop key="locale">UTF-8</prop>-->
                 <!-- 本地化设置 -->
                 <!--<prop key="url_escaping_charset">UTF-8</prop>-->
-                <prop key="template_update_delay">3600</prop>
+                <!--<prop key="template_update_delay">3600</prop>-->
             </props>
         </property>
     </bean>
