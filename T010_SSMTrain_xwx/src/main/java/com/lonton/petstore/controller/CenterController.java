@@ -1,7 +1,7 @@
 package com.lonton.petstore.controller;
 
 import com.lonton.petstore.entity.ResponseResult;
-import com.lonton.petstore.services.exceptions.DataInsertException;
+import com.lonton.petstore.services.exceptions.InsertDataException;
 import com.lonton.petstore.services.exceptions.PasswordNotMatchException;
 import com.lonton.petstore.services.exceptions.ServiceException;
 import com.lonton.petstore.services.exceptions.UserNotFoundException;
@@ -38,7 +38,7 @@ public class CenterController {
             return new ResponseResult<Void>(601, msg);
         } else if (e instanceof PasswordNotMatchException) {
             return new ResponseResult<Void>(602, msg);
-        } else if (e instanceof DataInsertException) {
+        } else if (e instanceof InsertDataException) {
             return new ResponseResult<Void>(603, msg);
         } else {
             return new ResponseResult<>(600, "系统忙，请稍后重试！");

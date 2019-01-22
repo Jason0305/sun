@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <% String root = request.getContextPath();
-        System.err.println("root = " + root);%>
+<% String root = request.getContextPath() + "/";%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +10,8 @@
 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top header_nav" role="navigation">
     <div class="container nav_header">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand projectName">
-                <span><img src="<%=root%>/images/logo.png" alt="" width="20" height="20"></span>
+            <a href="<%=root%>index.do" class="navbar-brand projectName">
+                <span><img src="<%=root%>static/images/logo.png" alt="" width="20" height="20"></span>
                 <span>宠物商城</span>
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -37,14 +36,14 @@
                         <span class="fa fa-mobile fa-lg navCollectionIcon"></span>
                         <span>手机客户端</span>
                         <span class="caret"></span>
-                        <img src="<%=root%>/images/mobile_download.png" width="130" alt=""/></a>
+                        <img src="static/images/mobile_download.png" width="130" alt=""/></a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="javascript:;" class="fa fa-user dropdown-toggle" data-toggle="dropdown"> 个人中心</a>
                     <ul class="dropdown-menu dropdown-menu-left" role="menu" style="min-width:100%">
-                        <li><a href="javascript:;">个人资料</a></li>
+                        <li><a href="<%=root%>user/info.do">个人资料</a></li>
                         <li><a href="javascript:;">收货地址</a></li>
                         <li><a href="javascript:;">修改密码</a></li>
                         <li class="divider"></li>
@@ -57,11 +56,12 @@
                         <span class="fa fa-shopping-cart text-info"></span>
                         <span> 购物车</span>
                         <span class="badge badge-danger">100</span>
-                        <ul class="dropdown-menu dropdown-menu-left group_list" role="menu" style="min-width: max-content">
+                        <ul class="dropdown-menu dropdown-menu-left group_list" role="menu"
+                            style="min-width: max-content">
                             <li style="">
                                 <div>
                                     <div class="img">
-                                        <img src="<%=root%>/images/shopping_cart.jpg" alt="">
+                                        <img src="<%=root%>static/images/shopping_cart.jpg" alt="">
                                     </div>
                                     <div class="content" width="100">
                                         <p><a href="#">宠物名称</a></p>
@@ -75,7 +75,7 @@
                             </li>
                             <li>
                                 <div>
-                                    <div class="img"><img src="<%=root%>/images/shopping_cart.jpg" alt=""></div>
+                                    <div class="img"><img src="<%=root%>static/images/shopping_cart.jpg" alt=""></div>
                                     <div class="content"><p><a href="#">宠物名称</a></p>
                                         <p>宠物类型:柯基8255</p></div>
                                     <div class="Operations">
@@ -115,9 +115,9 @@
                         </ul>
                     </a>
                 </li>
-                <li><a href="<%=root%>/user/login.do" class="" data-toggle="tooltip" data-placement="bottom" title=""
+                <li><a href="<%=root%>user/login.do" class="" data-toggle="tooltip" data-placement="bottom" title=""
                        data-original-title="你好,请先登录">登录</a></li>
-                <li><a href="<%=root%>/user/reg.do" class="" data-toggle="tooltip" data-placement="bottom" title=""
+                <li><a href="<%=root%>user/reg.do" class="" data-toggle="tooltip" data-placement="bottom" title=""
                        data-original-title="没有账号?注册一个">免费注册</a></li>
             </ul>
         </div>

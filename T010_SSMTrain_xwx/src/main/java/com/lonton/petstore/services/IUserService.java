@@ -1,10 +1,7 @@
 package com.lonton.petstore.services;
 
 import com.lonton.petstore.entity.User;
-import com.lonton.petstore.services.exceptions.DataInsertException;
-import com.lonton.petstore.services.exceptions.PasswordNotMatchException;
-import com.lonton.petstore.services.exceptions.UserNotFoundException;
-import com.lonton.petstore.services.exceptions.UsernameConflictException;
+import com.lonton.petstore.services.exceptions.*;
 
 /**
  * User业务层接口。
@@ -27,9 +24,13 @@ public interface IUserService {
      * @param user 用户信息
      * @return 成功注册的数据
      * @throws UsernameConflictException 用户名被占用
-     * @throws DataInsertException       位置错误
+     * @throws InsertDataException       位置错误
      */
-    User register(User user) throws UsernameConflictException, DataInsertException;
+    User register(User user) throws UsernameConflictException, InsertDataException;
     
     User getUserByUsername(String username);
+    
+    User getUserByUid(Integer uid);
+    
+    void updateInfo(User user) throws UserNotFoundException, UpdateDataException;
 }

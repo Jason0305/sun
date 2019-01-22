@@ -4,7 +4,7 @@ package com.lonton.petstore.generator;
 import com.lonton.petstore.entity.*;
 import com.lonton.petstore.mappers.*;
 import com.lonton.petstore.services.IUserService;
-import com.lonton.petstore.services.exceptions.DataInsertException;
+import com.lonton.petstore.services.exceptions.InsertDataException;
 import com.lonton.petstore.services.exceptions.UsernameConflictException;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
@@ -15,7 +15,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.DigestUtils;
 
 import java.util.Date;
 import java.util.UUID;
@@ -81,7 +80,7 @@ public class GeneratorDataTest {
                 userService.register(user);
             } catch (UsernameConflictException e) {
                 i--;
-            } catch (DataInsertException e) {
+            } catch (InsertDataException e) {
                 i--;
             }
         }

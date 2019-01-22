@@ -2,7 +2,7 @@ package com.lonton.petstore.services.impl;
 
 import com.lonton.petstore.entity.User;
 import com.lonton.petstore.services.IUserService;
-import com.lonton.petstore.services.exceptions.DataInsertException;
+import com.lonton.petstore.services.exceptions.InsertDataException;
 import com.lonton.petstore.services.exceptions.PasswordNotMatchException;
 import com.lonton.petstore.services.exceptions.UserNotFoundException;
 import com.lonton.petstore.services.exceptions.UsernameConflictException;
@@ -33,7 +33,7 @@ public class UserServiceImplTest {
             result = iUserService.register(user);
         } catch (UsernameConflictException e) {
             e.printStackTrace();
-        } catch (DataInsertException e) {
+        } catch (InsertDataException e) {
             e.printStackTrace();
         }
         log.info("result = " + result);

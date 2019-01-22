@@ -3,10 +3,7 @@ package com.lonton.petstore.services.impl;
 import com.lonton.petstore.entity.User;
 import com.lonton.petstore.mappers.UserMapper;
 import com.lonton.petstore.services.IUserService;
-import com.lonton.petstore.services.exceptions.DataInsertException;
-import com.lonton.petstore.services.exceptions.PasswordNotMatchException;
-import com.lonton.petstore.services.exceptions.UserNotFoundException;
-import com.lonton.petstore.services.exceptions.UsernameConflictException;
+import com.lonton.petstore.services.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,9 +19,9 @@ public class UserServiceImpl implements IUserService {
     
     @Autowired
     private UserMapper userMapper;
-//    @Transactional
     @Override
-    public User register(User user) throws UsernameConflictException, DataInsertException {
+    @Transactional(rollbackForClassName = {})
+    public User register(User user) throws UsernameConflictException, InsertDataException {
         // -判断尝试注册的用户名是否存在
         if (getUserByUsername(user.getUsername()) != null) {
             // --存在，抛出用户已存在异常
@@ -42,7 +39,7 @@ public class UserServiceImpl implements IUserService {
 //        user.setStatus(1);
         user.setPassword(getEncryptedPassword(user.getPassword(), user.getSalt()));
         if (userMapper.insertSelective(user) == 0) {
-            throw new DataInsertException("发生未知错误，请联系系统管理员！");
+            throw new InsertDataException("发生未知错误，请联系系统管理员！");
         }
     }
     
@@ -102,6 +99,22 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User getUserByUsername(String username) {
         return userMapper.getUserByUsername(username);
+    }
+    
+    @Override
+    public User getUserByUid(Integer uid) {
+        return userMapper.selectByPrimaryKey(uid);
+    }
+    
+    @Override
+    @Transactional
+    public void updateInfo(User user) throws UserNotFoundException, UpdateDataException {
+        if (getUserByUid(user.getId()) != null) {
+            int rows = userMapper.insertSelective(user);
+            if (rows != 1) throw new UpdateDataException("位置错误,用户用户信息失败!");
+        }else{
+            throw new UserNotFoundException("尝试访问的用户数据(id = " + user.getId() + "不存在!");
+        }
     }
     
     

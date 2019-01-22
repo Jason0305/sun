@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * 地址控制器。
+ *
+ * @author xuwanxing
+ */
 @Log4j
 @Controller
 @RequestMapping("/address")
@@ -21,16 +26,36 @@ public class AddressController {
     private IAddressService addressService;
     
     @RequestMapping("/page.do")
-    private String addressAction() {
+    private String pageAction() {
         return "address";
     }
     
-    @ResponseBody
-    @RequestMapping(value="/list.do",method = RequestMethod.GET)
-    private ResponseResult listAction(HttpSession session){
+    @RequestMapping(value = "/add_address.do", method = RequestMethod.GET)
+    private ResponseResult addAddressAction(Address address, HttpSession session) {
         Integer uid = (Integer) session.getAttribute("uid");
-        List<Address> addresses = addressService.getAddresses(uid);
-        log.info(addresses);
-        return new ResponseResult<>(addresses);
+        address.setUid(uid);
+        address = addressService.addAddress(address);
+        return new ResponseResult<>(address);
+    }
+    
+    @ResponseBody
+    @RequestMapping(value = "/list.do", method = RequestMethod.GET)
+    private ResponseResult listAction(HttpSession session) {
+        Integer uid = (Integer) session.getAttribute("uid");
+        return new ResponseResult<>(addressService.getAddresses(uid));
+    }
+    
+    @RequestMapping(value = "/delete.do", method = RequestMethod.GET)
+    private ResponseResult deleteAction(Integer id, HttpSession session) {
+        Integer uid = (Integer) session.getAttribute("uid");
+        addressService.deleteAddress(uid, id);
+        return new ResponseResult();
+    }
+    
+    @RequestMapping(value = "/update.do", method = RequestMethod.GET)
+    private ResponseResult updateAction(Address address, HttpSession session) {
+        Integer uid = (Integer) session.getAttribute("uid");
+        addressService.updateAddress(uid, address);
+        return new ResponseResult<>(addressService.getAddresses(uid));
     }
 }

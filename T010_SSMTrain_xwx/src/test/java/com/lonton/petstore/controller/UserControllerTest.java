@@ -1,6 +1,7 @@
 package com.lonton.petstore.controller;
 
 import com.lonton.petstore.services.IUserService;
+import lombok.extern.log4j.Log4j;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,21 +11,25 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 
+@Log4j
 public class UserControllerTest {
     
-    @Resource
-    private IUserService commentService;
-    
-    @Autowired
-    private WebApplicationContext webApplicationContext;
+    //    @Resource
+    //    private IUserService commentService;
+    //
+    //    @Autowired
+    //    private WebApplicationContext webApplicationContext;
     
     
     private MockMvc mockMvc;
     
     @Before
     public void setUp() throws Exception {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+        //        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
     
     
@@ -39,6 +44,9 @@ public class UserControllerTest {
     
     @Test
     public void loginAction() {
-    
+        StringBuilder sb = new StringBuilder("0123.45");
+        
+        sb.insert(sb.lastIndexOf("."), UUID.randomUUID()).insert(0, new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss_[").format(new Date()));
+        log.warn(sb);
     }
 }

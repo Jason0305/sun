@@ -1,22 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% String root = request.getContextPath();
-    System.err.println("root = " + root);%>
+<% String root = request.getContextPath();%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="<%=root%>/plug-in/bootstrap-3.4.0-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=root%>/plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
-    <link rel="shortcut icon" href="<%=root%>/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<%=root%>/css/base.css" type="text/css">
-    <script type="text/javascript" src="<%=root%>/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="<%=root%>/plug-in/bootstrap-3.4.0-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<%=root%>/js/jquery.blockUI.js"></script>
-    <script type="text/javascript" src="<%=root%>/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="<%=root%>/js/base.js"></script>
-    <script type="text/javascript" src="<%=root%>/js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=root%>/static/plug-in/bootstrap-3.4.0-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=root%>/static/plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="shortcut icon" href="<%=root%>/static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<%=root%>/static/css/base.css" type="text/css">
+    <script type="text/javascript" src="<%=root%>/static/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="<%=root%>/static/plug-in/bootstrap-3.4.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<%=root%>/static/js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="<%=root%>/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="<%=root%>/static/js/base.js"></script>
+    <script type="text/javascript" src="<%=root%>/static/js/login.js"></script>
     <script type="text/javascript">
         let root = "<%=root%>";
     </script>
@@ -25,7 +24,7 @@
 
 <!--引入顶部导航栏-->
 <script type="text/javascript">
-    $("body").append($("<header id='header_navbar'></header>").load(root + "/header_navbar.do"));
+    $("body").append($("<header id='header_navbar'></header>").load("<%=root%>/header_navbar.do"));
 </script>
 <!--引入顶部导航栏-->
 
@@ -35,7 +34,7 @@
     <!--<h1>Hello,world!</h1>-->
     <!--<p>欢迎来到宠物商城</p>-->
     <!--<button class="btn btn-info" type="button">Message</button>-->
-    <div class="container login_form" style="float:right;">
+    <div class="container login_form  modal-content" style="float:right;">
         <form id="loginForm" role="form" class="">
             <span><h4>宠物商城</h4></span>
             <!--用户名输入start-->
@@ -115,7 +114,7 @@
 
 <!--引入底部导航start-->
 <script type="text/javascript">
-    $("body").append($("<section id='top_navbar'></section>").load(root + "/footer_navbar.do"));
+    $("body").append($("<section id='top_navbar'></section>").load("<%=root%>/footer_navbar.do"));
 </script>
 <!--引入底部导航end-->
 </body>

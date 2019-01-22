@@ -20,8 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             throws Exception {
         log.info("LoginInterceptor.preHandle()");
         // 获取Session
-        HttpSession session
-                = request.getSession();
+        HttpSession session = request.getSession();
         // 判断session中是否有登录信息
         if (session.getAttribute("username") == null) {
             // 没有登录信息，则：重定向到登录页

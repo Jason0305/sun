@@ -1,12 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% String root = request.getContextPath();%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <% String root = request.getContextPath();
-        System.err.println("root = " + root);%>
     <meta charset="UTF-8">
     <title>FooterNavbar</title>
-    <script type="text/javascript" src="<%=root%>/js/jquery.cookie.js"></script>
 </head>
 <body>
 
@@ -55,7 +53,7 @@
                     <li>
                         <div>
                             <a href="javascript:;">
-                                <img src="<%=root%>/images/QR_code.png" class="img-responsive" width="234" height="233"
+                                <img src="<%=root%>/static/images/QR_code.png" class="img-responsive" width="234" height="233"
                                      alt="">
                             </a>
                         </div>
@@ -81,10 +79,10 @@
                 商品流通许可证 SP1101051110165515（1-1） | 营业执照 </p>
             <p class="nav navbar-nav col-md-12" style="text-align:center;">
                 <a href="javascript:;">
-                    <img src="<%=root%>/images/footerbomX.gif" width="108" height="40">
+                    <img src="<%=root%>/static/images/footerbomX.gif" width="108" height="40">
                 </a>
                 <a href="javascript:;">
-                    <img src="<%=root%>/images/footerbomC.png" width="112" height="40">
+                    <img src="<%=root%>/static/images/footerbomC.png" width="112" height="40">
                 </a>
             </p>
         </div>

@@ -12,6 +12,7 @@ public class Address {
     private String recvProvince;
     private String recvCity;
     private String recvArea;
+    private String recvDistrict;
     private String recvAddress;
     private String recvPhone;
     private String recvTel;
