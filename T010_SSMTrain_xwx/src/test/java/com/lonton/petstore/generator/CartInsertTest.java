@@ -1,7 +1,5 @@
 package com.lonton.petstore.generator;
 
-import com.lonton.petstore.entity.OrderItem;
-import com.lonton.petstore.entity.Pet;
 import com.lonton.petstore.entity.ShopCart;
 import com.lonton.petstore.mappers.ShopCartMapper;
 import lombok.extern.log4j.Log4j;
@@ -10,8 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.Date;
 
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)

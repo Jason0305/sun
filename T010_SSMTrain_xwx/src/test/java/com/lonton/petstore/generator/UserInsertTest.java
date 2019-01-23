@@ -1,8 +1,8 @@
 package com.lonton.petstore.generator;
 
 
-import com.lonton.petstore.entity.*;
-import com.lonton.petstore.mappers.*;
+import com.lonton.petstore.entity.User;
+import com.lonton.petstore.mappers.UserMapper;
 import com.lonton.petstore.services.IUserService;
 import com.lonton.petstore.services.exceptions.InsertDataException;
 import com.lonton.petstore.services.exceptions.UsernameConflictException;

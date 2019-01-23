@@ -1,13 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% String root = request.getContextPath();
-    System.err.println("root = " + root);%>
+<% String root = request.getContextPath()+"/";%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>shopCar</title>
-    <link rel="stylesheet" type="text/css" href="<%=root%>/plug-in/bootstrap-3.4.0-dist/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=root%>static/plug-in/bootstrap-3.4.0-dist/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="<%=root%>static/js/dist-vue.js"></script>
     <style>
         * {
             margin: 0;
@@ -66,8 +65,8 @@
             <th>
                 <label>
                     全选
-                    <span class="glyphicon glyphicon-unchecked" @click="selectAll" v-show="!saremark"/></span>
-                    <span class="glyphicon glyphicon-ok-circle" @click="selectAll" v-show="saremark"/></span>
+                    <span class="glyphicon glyphicon-unchecked" @click="selectAll" v-show="!saremark"></span>
+                    <span class="glyphicon glyphicon-ok-circle" @click="selectAll" v-show="saremark"></span>
                 </label>/
                 <label for="" class="fx" @click="selectInverse">
                     反选

@@ -13,8 +13,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:Spring/spring-*.xml"})

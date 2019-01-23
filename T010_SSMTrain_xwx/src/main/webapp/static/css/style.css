@@ -5,20 +5,20 @@
 body, v, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
 body {
 	font-size:12px;
-	/* [disabled]color:#666; */
+	 /*[disabled]color:#666; */
 	font-family:"Microsoft Yahei",Heiti,arial,helvetica,sans-serif!important;/*font-family:Verdana, Microsoft YaHei, Simsun;*/
 	line-height:23px;
 }
 fieldset, img { border:0;}
-img{ display:block;}
+/*img{ display:block;}*/
 ol, ul { list-style:none; }
-h1, h2, h3, h4, h5, h6{ font-size:100%;}
+/*h1, h2, h3, h4, h5, h6{ font-size:100%;}*/
 em { font-style:normal; }
 input, button, select, textarea{ outline:none;}
 textarea { resize:none; }
 a { color:#666;text-decoration:none; }
 a:hover { text-decoration:none;}
-a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有一个虚线的边框出现*/
+a:focus{outline:none; -moz-outline:none;}/*解决  去除 a 链接点击后有一个虚线的边框出现*/
 
 /*a:hover{ color:#F09E0B;}*/
 
@@ -34,7 +34,7 @@ a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有
 .top-con .t-con-l{ font-size:14px; color:#000; line-height:43px;}
 .top-con .t-con-r li{ float:left; margin-left:45px; line-height:43px;}
 .top-con .t-con-r .erweima{ position:relative;}
-.top-con .t-con-r .erweima a{padding-right:25px; background:url(../images/erweima-bg.jpg) no-repeat 80px center;}
+.top-con .t-con-r .erweima a{padding-right:25px; background:url(../images/img/erweima-bg.jpg) no-repeat 80px center;}
 .top-con .t-con-r .erweima .ewm-tu{ width:94px; height:94px; padding:10px; background-color:#fff; border:1px solid #e5e5e5; overflow:hidden; position:absolute;top:43px; right:0; display:none;}
 .top-con .t-con-r .erweima .ewm-tu a{ padding:0;}
 .top-con .t-con-r li a{ font-size:14px; color:#000;}
@@ -81,40 +81,41 @@ a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有
 .switch-city .select-city .sl-city-con dd a:hover{ color:#F09E0B;}
 
 /*nav 开始*/
-.nav{ position:relative;}
-.nav .sp-kj{ width:267px; height:47px; line-height:47px; font-size:16px; color:#fff; float:left; background:#F09E0B url(../images/sp-kj-bg.jpg) no-repeat 6px center; padding-left:35px; position:relative;}
-.nav .kj-show{ width:302px; height:560px;z-index:1; position:absolute; top:47px; left:0;}
-.nav ul{ float:left;}
-.nav li{ float:left; width:112px; height:47px; line-height:47px; text-align:center;}
-.nav li a{ font-size:15px; color:#1F1F1F;}
-.nav li a:hover{ color:#F09E0B;}
-   /**************在线商城首页快捷二的中方法**************/
-.nav .kj-show2{width:302px;height:560px;background-color:#2B2B2B;z-index:2;position:relative;position:absolute; top:47px; left:0; }
-.nav .kj-show2 .kj-info1{ border-top:1px solid #343434; border-bottom:1px solid #000;}
-.nav .kj-show2 .kj-dl1{ padding:5px 10px 5px;}
-.nav .kj-show2 .kj-dl1 dt{padding-left:20px; background:url(../images/kj-show-dt-tu1.gif) no-repeat left center; margin-bottom:4px;}
-.nav .kj-show2 .kj-dl1 dt a{ font-size:14px; font-weight:bold;color:#fff;}
-.nav .kj-show2 .kj-dl1 dt a:hover{ color:#F09E0B;}
-.nav .kj-show2 .kj-dl1 dd{ line-height:30px;font-size:14px; color:#fff;padding-left:20px;}
-.nav .kj-show2 .hover-show-bg{ background-color:#fff;}
-.nav .kj-show2 .hover-show-bg .kj-dl1 dt{background:url(../images/kj-show-dt-tu1-show.gif) no-repeat left center;}
-.nav .kj-show2 .hover-show-bg dt a{ color:#2b2b2b;}
-.nav .kj-show2 .hover-show-bg dd{color:#2b2b2b;}
-.nav .kj-show2 .kj-if-show{ display:none; width:680px; min-height:558px;border:1px solid #DBDBDB; border-left:none; background-color:#fff; position:absolute; top:0; left:302px;}
-.nav .kj-show2 .kj-if-show dl{ margin:0 11px;padding:15px 8px;border-bottom:1px solid #D5D5D5;}
-.nav .kj-show2 .kj-if-show dl dt{ width:150px; font-size:14px; color:#000; font-weight:bold; float:left;}
-.nav .kj-show2 .kj-if-show dl dd{ float:left; width:490px;}
-.nav .kj-show2 .kj-if-show dl dd a{ display:inline-block;font-size:14px; color:#000; margin-right:30px;}
-.nav .kj-show2 .kj-if-show dl dd a:hover{ color:#F09E0B;}
+.navigation{ position:relative;}
+.navigation .sp-kj{ width:267px; height:47px; line-height:47px; font-size:16px; color:#fff; float:left; background:#F09E0B url(../images/img/sp-kj-bg.jpg) no-repeat 6px center; padding-left:35px; position:relative;}
+.navigation .kj-show{ width:302px; height:560px;z-index:1; position:absolute; top:47px; left:0;}
+.navigation ul{ float:left;}
+.navigation li{ float:left; width:112px; height:47px; line-height:47px; text-align:center;}
+.navigation li a{ font-size:15px; color:#1F1F1F;}
+.navigation li a:hover{ color:#F09E0B;}
+
+ /**************在线商城首页快捷二的中方法**************/
+.navigation .kj-show2{width:302px;height:560px;background-color:#2B2B2B;z-index:2;position:relative;position:absolute; top:47px; left:0; }
+.navigation .kj-show2 .kj-info1{ border-top:1px solid #343434; border-bottom:1px solid #000;}
+.navigation .kj-show2 .kj-dl1{ padding:5px 10px 5px;}
+.navigation .kj-show2 .kj-dl1 dt{padding-left:20px; background:url(../images/img/kj-show-dt-tu1.gif) no-repeat left center; margin-bottom:4px;}
+.navigation .kj-show2 .kj-dl1 dt a{ font-size:14px; font-weight:bold;color:#fff;}
+.navigation .kj-show2 .kj-dl1 dt a:hover{ color:#F09E0B;}
+.navigation .kj-show2 .kj-dl1 dd{ line-height:30px;font-size:14px; color:#fff;padding-left:20px;}
+.navigation .kj-show2 .hover-show-bg{ background-color:#fff;}
+.navigation .kj-show2 .hover-show-bg .kj-dl1 dt{background:url(../images/img/kj-show-dt-tu1-show.gif) no-repeat left center;}
+.navigation .kj-show2 .hover-show-bg dt a{ color:#2b2b2b;}
+.navigation .kj-show2 .hover-show-bg dd{color:#2b2b2b;}
+.navigation .kj-show2 .kj-if-show{ display:none; width:680px; min-height:558px;border:1px solid #DBDBDB; border-left:none; background-color:#fff; position:absolute; top:0; left:302px;}
+.navigation .kj-show2 .kj-if-show dl{ margin:0 11px;padding:15px 8px;border-bottom:1px solid #D5D5D5;}
+.navigation .kj-show2 .kj-if-show dl dt{ width:150px; font-size:14px; color:#000; font-weight:bold; float:left;}
+.navigation .kj-show2 .kj-if-show dl dd{ float:left; width:490px;}
+.navigation .kj-show2 .kj-if-show dl dd a{ display:inline-block;font-size:14px; color:#000; margin-right:30px;}
+.navigation .kj-show2 .kj-if-show dl dd a:hover{ color:#F09E0B;}
 /*nav END*/
 
 /*banner 图*/
 .style-banner img{ margin:0 auto;}
 
 /*banner 开始*/
-.banner-box{ width:100%; height:560px; /*background:url(../images/banner-bgtu.jpg) no-repeat top center;*/}
+.banner-box{ width:100%; height:560px; /*background:url(../images/img/banner-bgtu.jpg) no-repeat top center;*/}
 .banner{ height:560px; position:relative; overflow:hidden;/**/}
-.banner ul{ width:7200px; position:relative; left:0；}
+.banner ul{ width:7200px; position:relative; left:0;}
 .banner li{ float:left;}
 .banner .bnr{ display:inline-block; width:67px; height:121px; line-height:121px; text-align:center; background-color:#000; color:#fff; font-size:36px; font-family:"宋体"; opacity:0.3; position:absolute; top:220px; left:311px;}
 .banner .bnr-right{ left:1120px;}
@@ -129,9 +130,9 @@ a:focus{outline:none; -moz-outline:none;}		/*解决  去除 a 链接点击后有
 .hot-recommend .ys1 .ys1-ft{width:223px; height:75px;position:absolute; top:144px; left:39px;}
 .hot-recommend .ys1 .ys1-ft p{display:inline-block; width:94px; font-size:18px; color:#000;margin:14px 0 0 15px; float:left; text-align:center;}
 .hot-recommend .ys1 .ys1-ft p span{  font-size:14px; }
-.hot-recommend .ys1 .ys1-ft a{ float:left; width:90px; height:29px; background:url(../images/ys1-a-bg.jpg) no-repeat; text-align:center; line-height:29px; margin-top:25px; font-size:13px; color:#fff;}
+.hot-recommend .ys1 .ys1-ft a{ float:left; width:90px; height:29px; background:url(../images/img/ys1-a-bg.jpg) no-repeat; text-align:center; line-height:29px; margin-top:25px; font-size:13px; color:#fff;}
 .hot-recommend .ys2 p{ font-size:18px; color:#000; text-align:center; margin:13px 0 15px;}
-.hot-recommend .ys2 .ys2-a1{ display:block; width:144px; height:29px; line-height:29px; text-align:center; font-size:12px; color:#fff; background:url(../images/ys2-a-bg.gif) no-repeat; margin:0 auto;}
+.hot-recommend .ys2 .ys2-a1{ display:block; width:144px; height:29px; line-height:29px; text-align:center; font-size:12px; color:#fff; background:url(../images/img/ys2-a-bg.gif) no-repeat; margin:0 auto;}
 
 /*广告栏*/
 .advertisement{ height:74px; background-color:#EBEBEB; margin-top:20px; overflow:hidden;}

@@ -2,7 +2,6 @@ package com.lonton.petstore.generator;
 
 import com.lonton.petstore.entity.Address;
 import com.lonton.petstore.entity.Order;
-import com.lonton.petstore.entity.User;
 import com.lonton.petstore.mappers.AddressMapper;
 import com.lonton.petstore.mappers.OrderMapper;
 import com.lonton.petstore.mappers.UserMapper;
