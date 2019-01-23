@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 public class UpdateDataException extends ServiceException {
+    private static final long serialVersionUID = 8136835251720082016L;
+    
     public UpdateDataException() {
         super();
     }

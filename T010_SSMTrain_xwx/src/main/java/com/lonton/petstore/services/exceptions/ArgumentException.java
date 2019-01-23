@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 public class ArgumentException extends RuntimeException {
+    private static final long serialVersionUID = 803258224577938094L;
+    
     public ArgumentException() {
         super();
     }

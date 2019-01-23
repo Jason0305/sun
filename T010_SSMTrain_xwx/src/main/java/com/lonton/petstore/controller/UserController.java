@@ -29,7 +29,7 @@ import java.util.UUID;
 @Log4j
 @Controller
 @RequestMapping("/user")
-public class UserController extends CenterController {
+public class UserController extends BaseController {
     
     /**
      * 用户业务层实例。
@@ -151,14 +151,19 @@ public class UserController extends CenterController {
      * @return user对象
      */
     @ResponseBody
-    @RequestMapping(value = "/update_info.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/update_info.do", method = RequestMethod.POST)
     private ResponseResult<User> updateInfoAction(User user, HttpServletRequest request,
-                                                  CommonsMultipartFile avatarFile, HttpSession session) {
+                                                  @RequestParam(value = "avatarFile", required = false)
+                                                          CommonsMultipartFile avatarFile,
+                                                  HttpSession session) {
+        log.warn("avatarFile = " + avatarFile.getOriginalFilename());
         if (!avatarFile.isEmpty()) user.setAvatar(uploadAvatar(request, avatarFile));
-        
+        if ("".equals(user.getPhone())) user.setPhone(null);
+        if ("".equals(user.getUsername())) user.setUsername(null);
+        if ("".equals(user.getEmail())) user.setEmail(null);
         Integer uid = (Integer) session.getAttribute("uid");
         user.setId(uid);
-    
+        
         userService.updateInfo(user);
         log.warn("user = " + user);
         return new ResponseResult<>(user);
@@ -167,19 +172,23 @@ public class UserController extends CenterController {
     private String uploadAvatar(HttpServletRequest request, CommonsMultipartFile avatarFile) {
         String uploadDirPath = request.getServletContext().getRealPath("upload");
         File uploadDir = new File(uploadDirPath);
-        
         if (!uploadDir.exists()) uploadDir.mkdirs();
-        StringBuilder fileName = new StringBuilder(avatarFile.getOriginalFilename());
-        fileName.replace(0, fileName.lastIndexOf("."), UUID.randomUUID().toString());
-        fileName.insert(0, new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss_[").format(new Date()));
-        File dest = new File(uploadDir, fileName.toString());
         
+        StringBuilder fileName = new StringBuilder(avatarFile.getOriginalFilename());
+        log.warn("filename = " + fileName);
+        log.warn("avatarFile.length = " + avatarFile.getSize());
+        
+        fileName.replace(0, fileName.lastIndexOf("."), UUID.randomUUID().toString());
+        fileName.insert(0, new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss_").format(new Date()));
+        File dest = new File(uploadDir, fileName.toString());
+        log.error(dest.getAbsolutePath());
         //保存头像
         try {
             avatarFile.transferTo(dest);
         } catch (IllegalStateException e) {
             throw new UploadAvatarException("非法状态");
         } catch (IOException e) {
+            //e.printStackTrace();
             throw new UploadAvatarException("读写出错");
         }
         return "upload/" + fileName;

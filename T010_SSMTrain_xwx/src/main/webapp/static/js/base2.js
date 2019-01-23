@@ -292,18 +292,17 @@ $(document).ready(function () {
         if ($(this).val()) {
             var objUrl = gebjectURL(this.files[0]);
             console.log("objUrl = " + objUrl);
-            var objUrl = gebjectURL(this.files[0]);
             $(this).prev("img").attr("src", objUrl)
         }
     })
 
     function gebjectURL(file) {
         var url = null;
-        if (window.createObjectURL != undefined) { // basic
+        if (window.createObjectURL !== undefined) { // basic
             url = window.createObjectURL(file);
-        } else if (window.URL != undefined) { // mozilla(firefox)
+        } else if (window.URL !== undefined) { // mozilla(firefox)
             url = window.URL.createObjectURL(file);
-        } else if (window.webkitURL != undefined) { // webkit or chrome
+        } else if (window.webkitURL !== undefined) { // webkit or chrome
             url = window.webkitURL.createObjectURL(file);
         }
         return url;

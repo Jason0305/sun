@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 @Log4j
 @Controller
 @RequestMapping
-public class CenterController {
+public class BaseController {
     
     /**
      * 异常处理。
@@ -32,7 +32,7 @@ public class CenterController {
     @ExceptionHandler(ServiceException.class)
     @ResponseBody
     public ResponseResult<?> exceptionAction(Exception e) {
-        log.info("exception");
+        log.info("BaseController.exceptionAction>>>>catch>>>>>>>exception:msg="+e.getMessage());
         String msg = e.getMessage();
         if (e instanceof UserNotFoundException) {
             return new ResponseResult<Void>(601, msg);
@@ -41,7 +41,7 @@ public class CenterController {
         } else if (e instanceof InsertDataException) {
             return new ResponseResult<Void>(603, msg);
         } else {
-            return new ResponseResult<>(600, "系统忙，请稍后重试！");
+            return new ResponseResult<>(604, "系统忙，请稍后重试！");
         }
     }
     

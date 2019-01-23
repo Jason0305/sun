@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<%=root%>static/plug-in/bootstrap-3.4.0-dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="<%=root%>static/plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="<%=root%>static/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=root%>static/css/shopping-mall-index.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=root%>static/css/base2.css"/>
     <link rel="shortcut icon" href="<%=root%>static/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%=root%>static/css/base.css" type="text/css">
     <script type="text/javascript" src="<%=root%>static/js/jquery-3.1.1.min.js"></script>
@@ -57,71 +57,53 @@
             </ul>
         </div>
         <div class="personal-r f-r">
-            <div class="personal_content">
-                <div class="personal-r-tit">
-                    <h3>个人资料</h3>
-                </div>
-                <div class="data-con">
-                    <div class="dt1">
-                        <p class="f-l">当前头像：</p>
-                        <div class="avatar f-l">
-                            <div class="tu f-l">
-                                <a href="#">
-                                    <img src="<%=root%>static/images/img/data-tu.gif"/>
-                                    <input type="file" name="" id="" class="img1"/>
-                                </a>
+            <form id="infoForm" enctype="multipart/form-data">
+                <div class="personal_content">
+                    <div class="personal-r-tit">
+                        <h3>个人资料</h3>
+                    </div>
+                    <div class="data-con">
+                        <div class="dt1">
+                            <p class="f-l">当前头像：</p>
+                            <div class="avatar f-l">
+                                <div class="tu f-l">
+                                    <a href="#">
+                                        <img src="<%=root%>static/images/img/data-tu.gif"/>
+                                        <input type="file" name="avatarFile" id="" class="img1" disabled="disabled"/>
+                                    </a>
+                                </div>
+                                <a href="JavaScript:;" class="sc f-l" shangchuang="">上传头像</a>
+                                <div style="clear:both;"></div>
                             </div>
-                            <a href="JavaScript:;" class="sc f-l" shangchuang="">上传头像</a>
                             <div style="clear:both;"></div>
                         </div>
-                        <div style="clear:both;"></div>
+                        <div class="dt1">
+                            <p class="dt-p f-l">用户名：</p>
+                            <input type="text" id="username" name="username" disabled="disabled"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="dt1">
+                            <p class="dt-p f-l">电子邮箱：</p>
+                            <input type="text" id="email" name="email" disabled="disabled"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="dt1">
+                            <p class="dt-p f-l">手机号码：</p>
+                            <input type="text" id="phone" name="phone" disabled="disabled"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="dt1 gender_span">
+                            <p class="dt-p f-l">性别：</p>
+                            <input type="radio" name="gender" id="gender_male" value="1" disabled/><label
+                                for="gender_male">男</label>
+                            <input type="radio" name="gender" id="gender_female" value="0" disabled/><label
+                                for="gender_female">女</label>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <button type="button" id="updateInfoBtn" class="btn-pst">修改</button>
                     </div>
-                    <div class="dt1">
-                        <p class="dt-p f-l">昵称：</p>
-                        <input type="text" placeholder="RH了"/>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <div class="dt1">
-                        <p class="dt-p f-l">用户名：</p>
-                        <input type="text" value="zhao601884596"/>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <div class="dt1 gender_span">
-                        <p class="dt-p f-l">性别：</p>
-                        <input type="radio" name="hobby" value="1"/><span>男</span>
-                        <input type="radio" name="hobby" value="0"/><span>女</span>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <div class="dt1">
-                        <p class="dt-p f-l">年龄：</p>
-                        <input type="text" value="20"/>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <div class="dt1 dt3">
-                        <p class="dt-p f-l">手机号：</p>
-                        <input type="text" value="12345678910"/>
-                        <button>获取短信验证码</button>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <div class="dt1">
-                        <p class="dt-p f-l">验证码：</p>
-                        <input type="text" value=""/>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <div class="dt1">
-                        <p class="dt-p f-l">邮箱：</p>
-                        <input type="text" value="601884596@qq.com"/>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <div class="dt1 dt4">
-                        <p class="dt-p f-l">密码：</p>
-                        <input type="text" value=""/>
-                        <button>修改密码</button>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <button class="btn-pst">保存</button>
                 </div>
-            </div>
+            </form>
         </div>
         <div style="clear:both;"></div>
     </div>

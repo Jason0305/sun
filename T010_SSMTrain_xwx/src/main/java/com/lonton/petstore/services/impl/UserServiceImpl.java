@@ -110,7 +110,7 @@ public class UserServiceImpl implements IUserService {
     @Transactional
     public void updateInfo(User user) throws UserNotFoundException, UpdateDataException {
         if (getUserByUid(user.getId()) != null) {
-            int rows = userMapper.insertSelective(user);
+            int rows = userMapper.updateByPrimaryKeySelective(user);
             if (rows != 1) throw new UpdateDataException("位置错误,用户用户信息失败!");
         }else{
             throw new UserNotFoundException("尝试访问的用户数据(id = " + user.getId() + "不存在!");

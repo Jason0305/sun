@@ -7,6 +7,8 @@ import java.io.PrintWriter;
  * 业务异常。
  */
 public class ServiceException extends RuntimeException {
+    private static final long serialVersionUID = -8699633942766173048L;
+    
     public ServiceException() {
         super();
     }

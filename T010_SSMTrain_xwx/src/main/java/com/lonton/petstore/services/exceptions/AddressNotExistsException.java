@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 public class AddressNotExistsException extends ServiceException {
+    private static final long serialVersionUID = -1459992111008488087L;
+    
     public AddressNotExistsException() {
         super();
     }

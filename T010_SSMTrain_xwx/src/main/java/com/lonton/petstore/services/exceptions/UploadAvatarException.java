@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 public class UploadAvatarException extends ServiceException {
+    private static final long serialVersionUID = -3893682770824966068L;
+    
     public UploadAvatarException() {
         super();
     }
