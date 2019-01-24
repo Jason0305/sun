@@ -6,19 +6,18 @@
     <meta charset="UTF-8">
     <title>宠物商城-个人资料</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="shortcut icon" href="<%=root%>static/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="<%=root%>static/plug-in/bootstrap-3.4.0-dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="<%=root%>static/plug-in/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="<%=root%>static/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="<%=root%>static/css/base2.css"/>
-    <link rel="shortcut icon" href="<%=root%>static/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%=root%>static/css/base.css" type="text/css">
+
     <script type="text/javascript" src="<%=root%>static/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="<%=root%>static/plug-in/bootstrap-3.4.0-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<%=root%>static/js/jquery.blockUI.js"></script>
     <script type="text/javascript" src="<%=root%>static/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="<%=root%>static/js/base.js"></script>
-    <script type="text/javascript" src="<%=root%>static/js/login.js"></script>
-    <script type="text/javascript" src="<%=root%>static/js/base2.js"></script>
     <script type="text/javascript">
         let root = "<%=root%>";
     </script>
@@ -49,7 +48,7 @@
                 <li><a href="#">我的订单<span>></span></a></li>
                 <%--<li><a href="#">我的预约<span>></span></a></li>--%>
                 <li><a href="#">购物车<span>></span></a></li>
-                <li><a href="#">管理收货地址<span>></span></a></li>
+                <li><a href="<%=root%>address/page.do">管理收货地址<span>></span></a></li>
                 <li><a href="#">我的收藏<span>></span></a></li>
                 <li><a href="#">交易记录<span>></span></a></li>
                 <li><a href="#">浏览记录<span>></span></a></li>
@@ -69,7 +68,7 @@
                                 <div class="tu f-l">
                                     <a href="#">
                                         <img src="<%=root%>static/images/img/data-tu.gif"/>
-                                        <input type="file" name="avatarFile" id="" class="img1" disabled="disabled"/>
+                                        <input type="file" name="avatarFile" id="" class="img1"/>
                                     </a>
                                 </div>
                                 <a href="JavaScript:;" class="sc f-l" shangchuang="">上传头像</a>

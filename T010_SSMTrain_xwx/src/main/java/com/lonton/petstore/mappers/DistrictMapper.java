@@ -55,4 +55,7 @@ public interface DistrictMapper {
     
     @Select({"select id, parent, `code`, `name` from t_district where parent = #{code,jdbcType=VARCHAR}"})
     List<District> selectDistrictByParent(String parent);
+    
+    @Select({"select id, parent, `code`, `name` from t_district"})
+    List<District> selectDistrictsAll();
 }

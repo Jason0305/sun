@@ -215,4 +215,154 @@ nav {
 /*===============注册================*/
 
 /*===============购物车================*/
-/*===============购物车================*/
+/*===============购物车====================*/
+
+/*===============地址====================*/
+.contB {
+    float: right;
+    width: 850px;
+    padding-bottom: 20px;
+}
+
+.contB .my-cont {
+    border-bottom: solid 1px #ede7e1;
+    margin-bottom: 15px;
+}
+
+.contB .cont-tit {
+    height: 37px;
+    border-bottom: solid 1px #ede7e1;
+    margin-bottom: 15px;
+}
+
+.contB .cont-tit h2 {
+    float: left;
+    font: 18px/28px '微软雅黑';
+    color: #666;
+    padding: 0 10px 4px 10px;
+    height: 32px;
+    border-bottom: solid 2px #4DA703;
+}
+
+.my-cont .order-status {
+    float: left;
+    width: 850px;
+    line-height: 22px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.sh_address_box {
+    float: left;
+}
+
+.sh_address_box .s_tag {
+    width: 10%;
+}
+.sh_address_box .s_name {
+    width: 15%;
+}
+
+.sh_address_box .s_addr {
+    width: 35%;
+}
+
+.sh_address_box .s_tel {
+    width: 15%;
+}
+
+.sh_address_box .s_postal {
+    width: 10%;
+}
+
+.sh_address_box .s_opt {
+    width: 15%;
+}
+
+.modify_ico, .delete_ico {
+    padding-left: 16px;
+    background: url(../images/save_ico.png) no-repeat 0 2px;
+}
+
+.sh_address_box .modify_ico {
+    background-image: url(../images/editor_ico.png);
+}
+
+.sh_address_box .delete_ico {
+    background-image: url(../images/delete_ico.png);
+}
+
+/*.add_btn {*/
+    /*padding: 0 8px 0 21px;*/
+    /*height: 24px;*/
+    /*border: 1px solid #e2deda;*/
+    /*border-radius: 3px;*/
+    /*cursor: pointer;*/
+    /*margin-right: 10px;*/
+    /*line-height: 24px;*/
+/*}*/
+
+/*a.add_btn {*/
+    /*display: inline-block;*/
+    /*color: #000;*/
+    /*font-weight: normal;*/
+    /*height: 22px;*/
+    /*line-height: 22px;*/
+    /*text-align: center;*/
+/*}*/
+
+.sh_address_box .address_add {
+    margin: 15px 0 5px;
+    padding-left: 10px;
+}
+
+/*.sh_address_box .add_btn {*/
+    /*background: url(../images/big_add.png) no-repeat 0 0;*/
+/*}*/
+
+.yy_address tbody td {
+    border: solid 1px #efefef;
+    padding: 10px;
+}
+
+.yy_address .infro_td {
+    text-align: left;
+}
+
+.yy_address .tb_news {
+    border: 1px solid #e8e8e8;
+}
+
+.news_addr {
+    float: left;
+    margin-top: 10px;
+}
+
+.sh_address_box h2.name_addr {
+    float: left;
+    font-size: 16px;
+    overflow: hidden;
+    font-weight: 700;
+    font-family: Arial, 'Microsoft Yahei', '\5FAE\8F6F\96C5\9ED1', serif;
+}
+
+.name_addr .addAddress, .modifyAddress {
+    float: left;
+    height: 38px;
+    width: 838px;
+    background: #F9F9F9;
+    border: 1px solid #EFEFEF;
+    font: 16px/38px '微软雅黑';
+    padding-left: 10px;
+}
+
+.cancel_btn {
+    color: #4DA703;
+    font-size: 13px;
+}
+
+.news_addr .o_layout {
+    float: left;
+    margin-top: 20px;
+}
+/*===============地址================*/

@@ -17,6 +17,12 @@ public class DistrictServiceImpl implements IDistrictService {
         return selectDistrictByParent(parent);
     }
     
+    @Override
+    public List<District> getDistrictsArr(String parent) {
+        List list = districtMapper.selectDistrictsAll();
+        return list;
+    }
+    
     private List<District> selectDistrictByParent(String parent){
         return  districtMapper.selectDistrictByParent(parent);
     }

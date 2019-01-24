@@ -32,11 +32,32 @@ public class AddressServiceImplTest {
     
     @Test
     public void getAddresses() {
-        List<Address> addresses = addressService.getAddresses(1);
+        List<Address> addresses = addressService.getAddresses(13);
         log.error("addresses = " + addresses);
     }
     
     @Test
     public void addNew() {
+    }
+    
+    @Test
+    public void addAddress() {
+    
+    }
+    
+    @Test
+    public void deleteAddress() {
+    }
+    
+    @Test
+    public void updateAddress() {
+    }
+    
+    @Test
+    public void getAddressById() {
+    }
+    
+    @Test
+    public void getAddresses1() {
     }
 }

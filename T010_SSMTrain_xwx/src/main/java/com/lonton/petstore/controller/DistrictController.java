@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Log4j
@@ -23,5 +24,13 @@ public class DistrictController {
     private ResponseResult listAction(String parent){
         List<District> districts = districtService.getDistricts(parent);
         return new ResponseResult<List<District>>(districts);
+    }
+    
+    @ResponseBody
+    @RequestMapping("/list_all.do")
+    private ResponseResult listArr(String parent){
+        List<District> districts = districtService.getDistrictsArr(parent);
+
+        return new ResponseResult<>(districts);
     }
 }

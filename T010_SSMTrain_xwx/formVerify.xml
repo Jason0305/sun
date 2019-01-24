@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+        <form id="test">
+            <name>
+                <text>用户名</text>
+                <rule>required,min_3,max_20,email</rule>
+            </name>
+            <pwd>
+                <text>密码</text>
+                <rule>required,min_3,max_20</rule>
+            </pwd>
+            <phone>
+                <text>手机</text>
+                <rule>phone</rule>
+            </phone>
+            <tel>
+                <text>电话</text>
+                <rule>tel</rule>
+            </tel>
+            <yzbm>
+                <text>邮编</text>
+                <rule>yzbm</rule>
+            </yzbm>
+            <sfz>
+                <text>身份证</text>
+                <rule>sfz</rule>
+            </sfz>
+            <url>
+                <text>url</text>
+                <rule>url</rule>
+            </url>
+            <ip>
+                <text>ip</text>
+                <rule>ip</rule>
+            </ip>
+            <mac>
+                <text>mac</text>
+                <rule>mac</rule>
+            </mac>
+            
+            <decimal>
+                <text>小数点两位</text>
+                <rule>decimal</rule>
+            </decimal>
+            <num>
+                <text>数字</text>
+                <rule>num</rule>
+            </num>
+            
+            <n>
+                <text>正整数</text>
+                <rule>n</rule>
+            </n>
+        </form>
+        
+        <form id="test2">
+            <name>
+                <text>用户名</text>
+                <rule>required,min_3,max_20,email</rule>
+            </name>
+            <pwd>
+                <text>密码</text>
+                <rule>required,min_3,max_20</rule>
+            </pwd>
+            <phone>
+                <text>手机</text>
+                <rule>phone</rule>
+            </phone>
+        </form>
+</forms>

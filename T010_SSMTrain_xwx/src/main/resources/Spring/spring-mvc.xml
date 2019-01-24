@@ -105,7 +105,7 @@
     <!--<mvc:resources mapping="/static/css/**" location="/static/"/>-->
     <!--<mvc:resources mapping="/static/images/**" location="/static/"/>-->
     <!--<mvc:resources mapping="/static/plug-in/**" location="/static/"/>-->
-    <mvc:resources mapping="/user/static/**" location="/static/"/>
-    <mvc:resources mapping="/**/static/**" location="/static/"/>
+    <!--<mvc:resources mapping="/user/static/**" location="/static/"/>-->
+    <!--<mvc:resources mapping="/**/static/**" location="/static/"/>-->
 
 </beans>

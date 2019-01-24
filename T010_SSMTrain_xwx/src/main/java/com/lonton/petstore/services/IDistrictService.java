@@ -12,4 +12,5 @@ import java.util.List;
 public interface IDistrictService {
     
     List<District> getDistricts(String code);
+    List<District> getDistrictsArr(String code);
 }

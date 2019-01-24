@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * 地址控制器。
@@ -39,9 +40,11 @@ public class AddressController {
     
     @ResponseBody
     @RequestMapping(value = "/list.do", method = RequestMethod.GET)
-    private ResponseResult listAction(HttpSession session) {
+    private ResponseResult<List<Address>> listAction(HttpSession session) {
         Integer uid = (Integer) session.getAttribute("uid");
-        return new ResponseResult<>(addressService.getAddresses(uid));
+        log.error("uid==="+uid);
+        List<Address> addresses = addressService.getAddresses(uid);
+        return new ResponseResult<>(addresses);
     }
     
     @RequestMapping(value = "/delete.do", method = RequestMethod.GET)

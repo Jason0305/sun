@@ -2,23 +2,23 @@
 /* CSS Document */
 
 /*CSS 初始化*/
-body, v, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
+/*body, v, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
 body {
 	font-size:12px;
-	 /*[disabled]color:#666; */
-	font-family:"Microsoft Yahei",Heiti,arial,helvetica,sans-serif!important;/*font-family:Verdana, Microsoft YaHei, Simsun;*/
+	 !*[disabled]color:#666; *!
+	font-family:"Microsoft Yahei",Heiti,arial,helvetica,sans-serif!important;!*font-family:Verdana, Microsoft YaHei, Simsun;*!
 	line-height:23px;
 }
 fieldset, img { border:0;}
-/*img{ display:block;}*/
+!*img{ display:block;}*!
 ol, ul { list-style:none; }
-/*h1, h2, h3, h4, h5, h6{ font-size:100%;}*/
+!*h1, h2, h3, h4, h5, h6{ font-size:100%;}*!
 em { font-style:normal; }
 input, button, select, textarea{ outline:none;}
 textarea { resize:none; }
 a { color:#666;text-decoration:none; }
 a:hover { text-decoration:none;}
-a:focus{outline:none; -moz-outline:none;}/*解决  去除 a 链接点击后有一个虚线的边框出现*/
+a:focus{outline:none; -moz-outline:none;}!*解决  去除 a 链接点击后有一个虚线的边框出现*!*/
 
 /*a:hover{ color:#F09E0B;}*/
 

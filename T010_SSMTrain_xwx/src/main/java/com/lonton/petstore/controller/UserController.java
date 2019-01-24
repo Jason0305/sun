@@ -156,8 +156,7 @@ public class UserController extends BaseController {
                                                   @RequestParam(value = "avatarFile", required = false)
                                                           CommonsMultipartFile avatarFile,
                                                   HttpSession session) {
-        log.warn("avatarFile = " + avatarFile.getOriginalFilename());
-        if (!avatarFile.isEmpty()) user.setAvatar(uploadAvatar(request, avatarFile));
+        if (avatarFile != null && !avatarFile.isEmpty()) user.setAvatar(uploadAvatar(request, avatarFile));
         if ("".equals(user.getPhone())) user.setPhone(null);
         if ("".equals(user.getUsername())) user.setUsername(null);
         if ("".equals(user.getEmail())) user.setEmail(null);

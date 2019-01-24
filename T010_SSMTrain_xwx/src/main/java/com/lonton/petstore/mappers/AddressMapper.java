@@ -102,9 +102,9 @@ public interface AddressMapper {
     
     
     @Select({"select ",
-            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, " +
-                    "recv_area recvArea, recv_address recvAddress, recv_phone recvPhone, ",
-            "recv_tel recvTel, recv_zip_code recvZipCode, recv_tag recvTag, is_default isDefault, created_time createdTime ",
+            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, recv_area recvArea, ",
+            "recv_address recvAddress, recv_phone recvPhone, recv_tel recvTel, recv_zip_code recvZipCode, ",
+            "recv_tag recvTag, is_default isDefault, created_time createdTime ",
             "from t_address ",
             "where uid = #{uid,jdbcType=INTEGER}"})
     List<Address> selectAddressByUid(Integer uid);
