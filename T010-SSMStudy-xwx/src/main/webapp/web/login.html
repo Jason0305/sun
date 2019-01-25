@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>PetStore Login</title>
+    <link type="text/css" rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+        body, html {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(83, 27, 175, 0.45), rgba(70, 70, 70, 0.3));
+        }
+
+        #login-main {
+            width: 400px;
+            height: min-content;
+            margin: auto auto;
+            border: solid 1px blue;
+            background: rgba(200, 200, 200, 0.45);
+            color: orange;
+            /*position: absolute;*/
+            /*top: 150px;*/
+            padding: 15px;
+            text-align: center;
+        }
+
+        a {
+            color: orange;
+            text-underline: none;
+            margin: 0 10px;
+        }
+
+        a:hover {
+            color: rgba(255, 156, 0, 0.66);
+            text-underline: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        #login-main input {
+            width: 100%;
+        }
+
+        /*input:last-child:hover {*/
+        /*cursor: pointer;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div id="login-main">
+    <form id="loginForm" class="form form-inline" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" id="username" placeholder="PHONE、E-MAIL、USERNAME"
+                   required=""/><br>
+            <input type="password" class="form-control" name="password" id="password" placeholder="PASSWORD"
+                   required=""/>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="rmb_loginInfo"/>
+            <label for="rmb_loginInfo">Remember Me</label>
+            <a href="#">Forgot password？</a>
+        </div>
+        <div>
+            <button type="button" id="loginBtn" class="btn btn-group-lg">Login</button>
+        </div>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //页面加载是若先前记住过用户信息，则将用户信息直接填充到页面中
+        if ($.cookie("isRemember") === "true") {
+            $("#rmb_loginInfo").attr({checked: "checked"});
+            $("#username").val($.cookie("username"));
+            $("#password").val($.cookie("password"));
+        }
+    });
+
+    $(".form-control").bind("blur", function () {
+
+    });
+
+    function rememberUserInfo() {
+        if ($("#rmb_loginInfo").is(":checked")) {
+            $.cookie("isRemember", "true", {expires: 7});
+            $.cookie("username", $("#username").val(), {expires: 7});
+            $.cookie("password", $("#password").val(), {expires: 7});
+        } else {
+            $.cookie("isRemember", "false");
+            $.cookie("username", null);
+            $.cookie("password", null);
+        }
+    }
+
+    loginBtn.onclick = function () {
+        console.log("cookie.password:" + $.cookie("password"));
+        $.ajax({
+            url: "../user/login.do",
+            data: $("#loginForm").serialize(),
+            type: "post",
+            dataType: "json",
+            beforeSend: function () {
+                console.log("send Before...");
+                // $.blockUI({message: '<h1>Just a moment...</h1>'});
+            },
+            success: function (data) {
+                alert("response success...");
+                rememberUserInfo();
+                location.href = "index.html";
+                setTimeout($.unblockUI, 200);
+            }
+        });
+    };
+
+</script>
+</html>
