@@ -59,11 +59,9 @@ public class UserController extends BaseController {
     @RequestMapping(value = "/handle_reg.do", method = RequestMethod.GET)
     private ResponseResult<User> registerAction(@RequestParam("username") String username,
                                                 @RequestParam("password") String password,
-                                                @RequestParam(value = "gender", required = false, defaultValue = "1") int gender,
+                                                @RequestParam(value = "gender", required = false, defaultValue = "1")
+                                                        int gender,
                                                 String phone, String email) {
-        //        userService.checkUsername(username);
-        //        userService.checkPassword(password);
-        //        userService.checkGender(gender);
         User user = userService.register(new User(username, password, gender, email, phone));
         return new ResponseResult<User>(user);
     }
@@ -83,7 +81,9 @@ public class UserController extends BaseController {
     }
     
     /**
-     * @return 返回html页面
+     * 登录页面响应
+     *
+     * @return 登录页面视图名
      */
     @RequestMapping("/login.do")
     private String loginPage() {
@@ -97,7 +97,7 @@ public class UserController extends BaseController {
      * @param username 用户名
      * @param password 密码
      * @param session  HttpSession
-     * @return json
+     * @return 响应数据
      */
     @ResponseBody
     @RequestMapping(value = "/handle_login.do", method = RequestMethod.GET)
@@ -125,17 +125,28 @@ public class UserController extends BaseController {
         return new ResponseResult();
     }
     
+    /**
+     * 用户个人资料页面请求.
+     *
+     * @return 视图名
+     */
     @RequestMapping(value = "/info.do", method = RequestMethod.GET)
     private String infoAction() {
         return "userInfo";
     }
     
+    /**
+     * 获取用户信息.
+     *
+     * @param session HttpSession
+     * @return 响应数据
+     */
     @ResponseBody
     @RequestMapping(value = "/get_info.do", method = RequestMethod.GET)
     private ResponseResult<User> getInfoAction(HttpSession session) {
         Integer uid = (Integer) session.getAttribute("uid");
         // 通过用户id获得用户数据
-        User user = userService.getUserByUid(uid);
+        User user = userService.getUserById(uid);
         // 保证密码安全将密码,盐值擦除后返回给前端
         user.setPassword(null);
         user.setSalt(null);
@@ -144,7 +155,7 @@ public class UserController extends BaseController {
     
     
     /**
-     * session.
+     * 更新用户信息.
      *
      * @param user    用户对象
      * @param session session
@@ -156,22 +167,39 @@ public class UserController extends BaseController {
                                                   @RequestParam(value = "avatarFile", required = false)
                                                           CommonsMultipartFile avatarFile,
                                                   HttpSession session) {
-        if (avatarFile != null && !avatarFile.isEmpty()) user.setAvatar(uploadAvatar(request, avatarFile));
-        if ("".equals(user.getPhone())) user.setPhone(null);
-        if ("".equals(user.getUsername())) user.setUsername(null);
-        if ("".equals(user.getEmail())) user.setEmail(null);
+        if (avatarFile != null && !avatarFile.isEmpty()) {
+            user.setAvatar(uploadAvatar(request, avatarFile));
+        }
+        if ("".equals(user.getPhone())) {
+            user.setPhone(null);
+        }
+        if ("".equals(user.getUsername())) {
+            user.setUsername(null);
+        }
+        if ("".equals(user.getEmail())) {
+            user.setEmail(null);
+        }
         Integer uid = (Integer) session.getAttribute("uid");
         user.setId(uid);
         
-        userService.updateInfo(user);
+        userService.updateUserInfo(user);
         log.warn("user = " + user);
         return new ResponseResult<>(user);
     }
     
+    /**
+     * 处理图片路径及文件名.
+     *
+     * @param request    HttpServletRequest
+     * @param avatarFile CommonsMultipartFile
+     * @return 文件路径
+     */
     private String uploadAvatar(HttpServletRequest request, CommonsMultipartFile avatarFile) {
         String uploadDirPath = request.getServletContext().getRealPath("upload");
         File uploadDir = new File(uploadDirPath);
-        if (!uploadDir.exists()) uploadDir.mkdirs();
+        if (!uploadDir.exists()) {
+            uploadDir.mkdirs();
+        }
         
         StringBuilder fileName = new StringBuilder(avatarFile.getOriginalFilename());
         log.warn("filename = " + fileName);
@@ -187,7 +215,6 @@ public class UserController extends BaseController {
         } catch (IllegalStateException e) {
             throw new UploadAvatarException("非法状态");
         } catch (IOException e) {
-            //e.printStackTrace();
             throw new UploadAvatarException("读写出错");
         }
         return "upload/" + fileName;

@@ -32,7 +32,7 @@ public class BaseController {
     @ExceptionHandler(ServiceException.class)
     @ResponseBody
     public ResponseResult<?> exceptionAction(Exception e) {
-        log.info("BaseController.exceptionAction>>>>catch>>>>>>>exception:msg="+e.getMessage());
+        log.error(e.getMessage());
         String msg = e.getMessage();
         if (e instanceof UserNotFoundException) {
             return new ResponseResult<Void>(601, msg);

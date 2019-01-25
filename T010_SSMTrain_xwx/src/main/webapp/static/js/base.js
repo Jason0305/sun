@@ -64,7 +64,7 @@ $(function () {
 
 
 /*******************个人资料*********************/
-$(function(){
+$(function () {
     if (!/(user\/info\.do)$/.test(window.location.pathname)) return;
     /**加载个人信息*/
     const request = $.ajax({
@@ -269,6 +269,7 @@ $(function () {
 $(function () {
     let addressListData;
     if (!/\S*(address\/)\S*$/.test(window.location.pathname)) return;
+
     function isModify() {
         $('#addressNew').show();
         $('.addAddress').hide();
@@ -337,7 +338,7 @@ $(function () {
         $(this).prevAll("input").val(this.innerText)
     });
 
-    showList();
+    refreshList();
 
     function fillAddressList(json) {
         $("#addressList").empty();
@@ -348,20 +349,21 @@ $(function () {
             $("#addressList").append($("<tr></tr>").attr({id: ("recvId_" + address.id)})
                 .append($("<td></td>").text(address.recvTag))
                 .append($("<td></td>").text(address.recvName))
-                .append($("<td></td>").text(address.recvDistrict + address.recvAddress))
+                .append($("<td></td>").text(address.recvDistrict + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" + address.recvAddress))
                 // .append($("<span></span>").text().attr({id:"district_"+}))
                 // .append($("<span></span>"))
                 // .append($("<span></span>"))
                 // .append($("<span></span>")))
                 .append($("<td></td>").text(address.recvPhone))
-                .append($("<td></td>").text(address.recvName))
-                .append($("<td><span class=''>修改</span>&nbsp;|&nbsp;" +
-                    "<span class=''>删除</span>&nbsp;|&nbsp;" + ((address.isDefault === 1) ?
-                        "<span class=''>设为默认</span>" : "<span class='badge'>默认</span>"))));
+                .append($("<td></td>").text(address.recvZipCode))
+                .append($("<td><a class=''>修改</a>&nbsp;|&nbsp;" +
+                    "<a class=''>删除</a>&nbsp;|&nbsp;" + ((address.isDefault === 1) ?
+                        "<a class=''>设为默认</a>" : "<span class='label label-warning'>默认</span>"))));
         })
     }
 
-    function showList() {
+    // 刷新地址列表
+    function refreshList() {
         $.ajax({
             "url": root + "address/list.do",
             "type": "GET",
@@ -384,18 +386,45 @@ $(function () {
         });
     }
 
-    $("#addNewBtn").click(function() {
-        $('#addressNew').show();
-        $('.modifyAddress').hide();
-        $('.addAddress').show();
-    });
+    // 地址模态框显示时
+    $('#addressModify').on('show.bs.modal', function (event) {
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
+        });
+        var button = $(event.relatedTarget);
+        let title = button.data('title');
+        $(this).find('.modal-title').text((title === "新增" ? title : "修改") + "收货地址");
+        $('#addressModify').on('hide.bs.modal', function (event) {
+            if (title === "新增") {
+                addNewAddress();
+            } else {
+                alert("修改");
+            }
+        })
+    })
 
+    // 执行新增地址操作
+    function addNewAddress() {
+        $.ajax({
+            url: root + "address/add_address.do",
+            method: "get",
+            data: $("addNewAddressForm").serialize(),
+            dataType: "json",
+            success: function () {
+                refreshList();
+            }
+
+        })
+    }
+
+    // 地址栏功能被点击
     $("#addressList").click(function (e) {
-        if (e.target.tagName === "SPAN") {
+        if (e.target.tagName === "A") {
             const span = $(e.target);
             const tr = span.parent().parent();
             switch (span.text()) {
                 case "修改":
+                    $("#addressModify").modal("show");
                     const addressId = +tr.attr("id").replace("recvId_", "");
                     let currentAddress;
                     addressListData.data.forEach(function (address) {
@@ -414,6 +443,7 @@ $(function () {
                     $(".modifyAddress").show();
                     break;
                 case "删除":
+                    alert("safas");
                     confirm("确认此收货地址删除？") && tr.remove();
                     break;
                 case "设为默认":

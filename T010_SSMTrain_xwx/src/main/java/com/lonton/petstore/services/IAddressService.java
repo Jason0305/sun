@@ -21,7 +21,7 @@ public interface IAddressService {
      * @param uid 用户id
      * @return 收货地址列表
      */
-    List<Address> getAddresses(Integer uid);
+    List<Address> getAddressList(Integer uid);
     
     /**
      * 插入收货地址。
@@ -30,7 +30,7 @@ public interface IAddressService {
      * @return 返回当前新增地址
      * @throws InsertDataException 插入异常
      */
-    Address addAddress(Address address);
+    void addAddress(Address address);
     
     /**
      *

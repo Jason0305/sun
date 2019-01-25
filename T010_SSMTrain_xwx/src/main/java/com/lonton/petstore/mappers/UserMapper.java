@@ -1,16 +1,35 @@
 package com.lonton.petstore.mappers;
 
 import com.lonton.petstore.entity.User;
-import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.InsertProvider;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.UpdateProvider;
 
-import java.util.Date;
-
+/**
+ * 用户通能mybatis接口.
+ *
+ * @author xuwanxing
+ */
 public interface UserMapper {
+    /**
+     * 根据id删除用户信息.
+     *
+     * @param id 用户id
+     * @return 执行成功的条数
+     */
     @Delete({"delete from t_user ",
             "where id = #{id,jdbcType=INTEGER}"})
     int deleteByPrimaryKey(Integer id);
     
+    /**
+     * 新增用户信息.
+     *
+     * @param record 用户信息实例
+     * @return 执行成功的条数
+     */
     @Insert({"insert into t_user (id , username, ",
             "password, gender, email, ",
             "phone, avatar, salt, ",
@@ -23,9 +42,21 @@ public interface UserMapper {
             "#{createdTime,jdbcType=TIMESTAMP})"})
     int insert(User record);
     
+    /**
+     * 选择性新增用户信息.
+     *
+     * @param record 包含用户信息的实例
+     * @return 执行成功的条数
+     */
     @InsertProvider(type = UserSqlProvider.class, method = "insertSelective")
     int insertSelective(User record);
     
+    /**
+     * 根据用户id查询用户信息.
+     *
+     * @param id 用户id
+     * @return 用户信息实例
+     */
     @Select({"select ",
             "id, username, password, gender, email, phone, avatar, salt, grade, status, last_login lastLogin, ",
             "created_time createdTime ",
@@ -33,9 +64,21 @@ public interface UserMapper {
             "where id = #{id,jdbcType=INTEGER}"})
     User selectByPrimaryKey(Integer id);
     
+    /**
+     * 选择性更新用户信息.
+     *
+     * @param record 包含用户信息的实例
+     * @return 执行成功的条数
+     */
     @UpdateProvider(type = UserSqlProvider.class, method = "updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(User record);
     
+    /**
+     * 修改用户指定信息.
+     *
+     * @param record 包含用户信息的实例
+     * @return 执行成功的条数
+     */
     @Update({"update t_user ",
             "set username = #{username,jdbcType=VARCHAR},",
             "password = #{password,jdbcType=CHAR},",
@@ -51,6 +94,12 @@ public interface UserMapper {
             "where id = #{id,jdbcType=INTEGER}"})
     int updateByPrimaryKey(User record);
     
+    /**
+     * 根据用户名查询用户信息.
+     *
+     * @param username 用户名
+     * @return 包含用户信息的实例
+     */
     @Select({"SELECT * ",
             "FROM t_user ",
             "WHERE username = #{username}"})

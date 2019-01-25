@@ -19,10 +19,7 @@ public interface AddressMapper {
      * @param id 地址id
      * @return 受影响的行数
      */
-    @Delete({
-            "delete from t_address",
-            "where id = #{id,jdbcType=INTEGER}"
-    })
+    @Delete({"delete from t_address where id = #{id,jdbcType=INTEGER}"})
     int deleteByPrimaryKey(Integer id);
     
     /**
@@ -33,14 +30,14 @@ public interface AddressMapper {
      */
     @Insert({"insert into t_address (id, uid, ",
             "recv_name, recv_province, ",
-            "recv_city, recv_area, ",
+            "recv_city, recv_area, recv_district",
             "recv_address, recv_phone, ",
             "recv_tel, recv_zip_code, ",
             "recv_tag, is_default, ",
             "created_time)",
             "values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, ",
             "#{recvName,jdbcType=VARCHAR}, #{recvProvince,jdbcType=VARCHAR}, ",
-            "#{recvCity,jdbcType=VARCHAR}, #{recvArea,jdbcType=VARCHAR}, ",
+            "#{recvCity,jdbcType=VARCHAR}, #{recvArea,jdbcType=VARCHAR}, #{recvDistrict,jdbcType=VARCHAR}",
             "#{recvAddress,jdbcType=CHAR}, #{recvPhone,jdbcType=CHAR}, ",
             "#{recvTel,jdbcType=VARCHAR}, #{recvZipCode,jdbcType=CHAR}, ",
             "#{recvTag,jdbcType=VARCHAR}, #{isDefault,jdbcType=INTEGER}, ",
@@ -55,23 +52,10 @@ public interface AddressMapper {
     int insertSelective(Address record);
     
     @Select({"select ",
-            "id, uid, recv_name, recv_province, recv_city, recv_area, recv_address, recv_phone, ",
-            "recv_tel, recv_zip_code, recv_tag, is_default, created_time",
-            "from t_address ",
-            "where id = #{id,jdbcType=INTEGER}"})
-    @ConstructorArgs({@Arg(column = "id", javaType = Integer.class, jdbcType = JdbcType.INTEGER, id = true),
-            @Arg(column = "uid", javaType = Integer.class, jdbcType = JdbcType.INTEGER),
-            @Arg(column = "recv_name", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "recv_province", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "recv_city", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "recv_area", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "recv_address", javaType = String.class, jdbcType = JdbcType.CHAR),
-            @Arg(column = "recv_phone", javaType = String.class, jdbcType = JdbcType.CHAR),
-            @Arg(column = "recv_tel", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "recv_zip_code", javaType = String.class, jdbcType = JdbcType.CHAR),
-            @Arg(column = "recv_tag", javaType = String.class, jdbcType = JdbcType.VARCHAR),
-            @Arg(column = "is_default", javaType = Integer.class, jdbcType = JdbcType.INTEGER),
-            @Arg(column = "created_time", javaType = Date.class, jdbcType = JdbcType.TIMESTAMP)})
+            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, recv_area recvArea,",
+            "recv_district recvDistrict, recv_address recvAddress, recv_phone recvPhone, recv_tel recvTel, ",
+            "recv_zip_code recvZipCode, recv_tag recvTag, is_default isDefault, created_time createdTime",
+            " from t_address where id = #{id,jdbcType=INTEGER}"})
     Address selectByPrimaryKey(Integer id);
     
     @UpdateProvider(type = AddressSqlProvider.class, method = "updateByPrimaryKeySelective")
@@ -83,6 +67,7 @@ public interface AddressMapper {
             "recv_province = #{recvProvince,jdbcType=VARCHAR},",
             "recv_city = #{recvCity,jdbcType=VARCHAR},",
             "recv_area = #{recvArea,jdbcType=VARCHAR},",
+            "recv_district = #{recvDistrict,jdbcType=VARCHAR},",
             "recv_address = #{recvAddress,jdbcType=CHAR},",
             "recv_phone = #{recvPhone,jdbcType=CHAR},",
             "recv_tel = #{recvTel,jdbcType=VARCHAR},",
@@ -94,27 +79,25 @@ public interface AddressMapper {
     int updateByPrimaryKey(Address record);
     
     @Select({"select ",
-            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, ",
-            "recv_area recvArea, recv_address recvAddress, recv_phone recvPhone, ",
-            "recv_tel recvTel, recv_zip_code recvZipCode, recv_tag recvTag, is_default isDefault, created_time createdTime ",
+            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, recv_area recvArea,",
+            "recv_district recvDistrict, recv_address recvAddress, recv_phone recvPhone, recv_tel recvTel, ",
+            "recv_zip_code recvZipCode, recv_tag recvTag, is_default isDefault, created_time createdTim ",
             "from t_address where uid = #{uid,jdbcType=INTEGER} limit 1"})
     Address getAddressByUid(Integer uid);
     
     
     @Select({"select ",
-            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, recv_area recvArea, ",
-            "recv_address recvAddress, recv_phone recvPhone, recv_tel recvTel, recv_zip_code recvZipCode, ",
-            "recv_tag recvTag, is_default isDefault, created_time createdTime ",
-            "from t_address ",
-            "where uid = #{uid,jdbcType=INTEGER}"})
+            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, recv_area recvArea,",
+            "recv_district recvDistrict, recv_address recvAddress, recv_phone recvPhone, recv_tel recvTel, ",
+            "recv_zip_code recvZipCode, recv_tag recvTag, is_default isDefault, created_time createdTim ",
+            "from t_address where uid = #{uid,jdbcType=INTEGER}"})
     List<Address> selectAddressByUid(Integer uid);
     
     @Select({"select ",
-            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, ",
-            "recv_area recvArea, recv_address recvAddress, recv_phone recvPhone, ",
-            "recv_tel recvTel, recv_zip_code recvZipCode, recv_tag recvTag, is_default isDefault, created_time createdTime ",
-            "from t_address ",
-            "where uid = #{uid,jdbcType=INTEGER} order by created_time desc limit 0,1"})
+            "id, uid, recv_name recvName, recv_province recvProvince,recv_city recvCity, recv_area recvArea,",
+            "recv_district recvDistrict, recv_address recvAddress, recv_phone recvPhone, recv_tel recvTel, ",
+            "recv_zip_code recvZipCode, recv_tag recvTag, is_default isDefault, created_time createdTim ",
+            "from t_address where uid = #{uid,jdbcType=INTEGER} order by created_time desc limit 0,1"})
     Address selectLatestAddress(Integer uid);
     
     @Select({"select count(id) from t_address where uid = #{uid,jdbcType=INTEGER} "})

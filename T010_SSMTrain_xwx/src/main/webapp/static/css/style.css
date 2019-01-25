@@ -25,7 +25,7 @@ a:focus{outline:none; -moz-outline:none;}!*解决  去除 a 链接点击后有�
 /*公用样式*/
 .w1200{ width:1200px; margin:0 auto;}
 .mt20{ margin-top:20px;}
-.f-l{ float:left;}
+.f_l{ float:left;}
 .f-r{ float:right;}
 .none{ display:none;}
 
@@ -145,7 +145,7 @@ a:focus{outline:none; -moz-outline:none;}!*解决  去除 a 链接点击后有�
 /*底部服务*/
 .ft-service{ width:100%;margin-top:70px; border-top:2px solid #AB5100; border-bottom:1px solid #DFDFDF; padding:17px 0 20px;}
 .sv-con-l2{ width:980px;}
-.sv-con-l2 dl{ width:134px; height:130px; padding-left:51px;border-right:1px solid #DEDEDE; float:left;}
+.sv-con-l2 dl{ width:134px; height:130px; padding-left:41px;border-right:1px solid #DEDEDE; float:left;}
 .sv-con-l2 dl dt{ height:32px;}
 .sv-con-l2 dl dt a{ font-size:16px; color:#000;}
 .sv-con-l2 dl dt a:hover{ color:#F09E0B;}

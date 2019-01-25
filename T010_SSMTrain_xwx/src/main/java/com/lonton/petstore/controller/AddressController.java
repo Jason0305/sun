@@ -34,8 +34,9 @@ public class AddressController {
     private ResponseResult addAddressAction(Address address, HttpSession session) {
         Integer uid = (Integer) session.getAttribute("uid");
         address.setUid(uid);
-        address = addressService.addAddress(address);
-        return new ResponseResult<>(address);
+        log.warn(address);
+        addressService.addAddress(address);
+        return new ResponseResult<>();
     }
     
     @ResponseBody
@@ -43,7 +44,7 @@ public class AddressController {
     private ResponseResult<List<Address>> listAction(HttpSession session) {
         Integer uid = (Integer) session.getAttribute("uid");
         log.error("uid==="+uid);
-        List<Address> addresses = addressService.getAddresses(uid);
+        List<Address> addresses = addressService.getAddressList(uid);
         return new ResponseResult<>(addresses);
     }
     
@@ -58,6 +59,6 @@ public class AddressController {
     private ResponseResult updateAction(Address address, HttpSession session) {
         Integer uid = (Integer) session.getAttribute("uid");
         addressService.updateAddress(uid, address);
-        return new ResponseResult<>(addressService.getAddresses(uid));
+        return new ResponseResult<>(addressService.getAddressList(uid));
     }
 }

@@ -89,11 +89,10 @@
     </div>
 
 </nav>--%>
-<section class="container">
+<section class="container center-block">
     <!--底部服务-->
     <div class="ft-service">
-        <div class="w1200">
-            <div class="sv-con-l2 f-l">
+            <div class="sv-con-l2">
                 <dl>
                     <dt><a href="#">新手上路</a></dt>
                     <dd>
@@ -131,18 +130,17 @@
                 </dl>
                 <div style="clear:both;"></div>
             </div>
-            <div class="sv-con-r2 f-r">
+            <div class="sv-con-r2">
                 <p class="sv-r-tle">187-8660-5539</p>
                 <p>周一至周五9:00-17:30</p>
                 <p>（仅收市话费）</p>
-                <a href="#" class="zxkf">24小时在线客服</a>
+                <a href="#">24小时在线客服</a>
             </div>
             <div style="clear:both;"></div>
-        </div>
     </div>
 
     <!--底部 版权-->
-    <div class="footer w1200">
+    <div class="footer">
         <p>
             <a href="#">关于我们</a><span>|</span>
             <a href="#">友情链接</a><span>|</span>

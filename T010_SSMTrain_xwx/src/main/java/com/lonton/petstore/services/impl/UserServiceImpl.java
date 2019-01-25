@@ -102,14 +102,14 @@ public class UserServiceImpl implements IUserService {
     }
     
     @Override
-    public User getUserByUid(Integer uid) {
+    public User getUserById(Integer uid) {
         return userMapper.selectByPrimaryKey(uid);
     }
     
     @Override
     @Transactional
-    public void updateInfo(User user) throws UserNotFoundException, UpdateDataException {
-        if (getUserByUid(user.getId()) != null) {
+    public void updateUserInfo(User user) throws UserNotFoundException, UpdateDataException {
+        if (getUserById(user.getId()) != null) {
             int rows = userMapper.updateByPrimaryKeySelective(user);
             if (rows != 1) throw new UpdateDataException("位置错误,用户用户信息失败!");
         }else{

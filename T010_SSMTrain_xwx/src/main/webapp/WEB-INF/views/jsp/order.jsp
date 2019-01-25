@@ -39,7 +39,7 @@
 <div class="container" style="">
     <!--个人资料-->
     <div class="personal w1200">
-        <div class="personal_menu f-l">
+        <div class="personal_menu f_l">
             <div class="personal_title">
                 <h3>个人中心</h3>
             </div>
@@ -58,7 +58,7 @@
         </div>
         <div class="order-right f-r">
             <div class="order-hd">
-                <dl class="f-l">
+                <dl class="f_l">
                     <dt>
                         <a href="#"><img src="<%=root%>static/images/img/data-tu2.gif" /></a>
                     </dt>
@@ -68,7 +68,7 @@
                     </dd>
                     <div style="clear:both;"></div>
                 </dl>
-                <div class="ord-dai f-l">
+                <div class="ord-dai f_l">
                     <p>待付款<span>1</span></p>
                     <p>待发货<span>1</span></p>
                     <p>待收货<span>1</span></p>
@@ -95,8 +95,8 @@
                     <div class="dai-con">
                         <dl class="dl1">
                             <dt>
-                                <input type="checkbox" name="hobby" value="" class="f-l"/>
-                                <a href="#" class="f-l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
+                                <input type="checkbox" name="hobby" value="" class="f_l"/>
+                                <a href="#" class="f_l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
                                 <div style="clear:both;"></div>
                             </dt>
                             <dd>
@@ -105,7 +105,7 @@
                             </dd>
                             <div style="clear:both;"></div>
                         </dl>
-                        <div class="dai-right f-l">
+                        <div class="dai-right f_l">
                             <P class="d-r-p1">颜色：蓝色<br />尺码：XL</P>
                             <p class="d-r-p2">¥ 66.00</p>
                             <p class="d-r-p3">¥ 66.00</p>
@@ -116,8 +116,8 @@
                     <div class="dai-con">
                         <dl class="dl1">
                             <dt>
-                                <input type="checkbox" name="hobby" value="" class="f-l"/>
-                                <a href="#" class="f-l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
+                                <input type="checkbox" name="hobby" value="" class="f_l"/>
+                                <a href="#" class="f_l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
                                 <div style="clear:both;"></div>
                             </dt>
                             <dd>
@@ -126,7 +126,7 @@
                             </dd>
                             <div style="clear:both;"></div>
                         </dl>
-                        <div class="dai-right f-l">
+                        <div class="dai-right f_l">
                             <P class="d-r-p1">颜色：蓝色<br />尺码：XL</P>
                             <p class="d-r-p2">¥ 66.00</p>
                             <p class="d-r-p3">¥ 66.00</p>
@@ -142,8 +142,8 @@
                     <div class="dai-con">
                         <dl class="dl1">
                             <dt>
-                                <input type="checkbox" name="hobby" value="" class="f-l"/>
-                                <a href="#" class="f-l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
+                                <input type="checkbox" name="hobby" value="" class="f_l"/>
+                                <a href="#" class="f_l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
                                 <div style="clear:both;"></div>
                             </dt>
                             <dd>
@@ -152,7 +152,7 @@
                             </dd>
                             <div style="clear:both;"></div>
                         </dl>
-                        <div class="dai-right f-l">
+                        <div class="dai-right f_l">
                             <P class="d-r-p1">颜色：蓝色<br />尺码：XL</P>
                             <p class="d-r-p2">¥ 66.00</p>
                             <p class="d-r-p3">¥ 66.00</p>
@@ -168,8 +168,8 @@
                     <div class="dai-con">
                         <dl class="dl1">
                             <dt>
-                                <input type="checkbox" name="hobby" value="" class="f-l"/>
-                                <a href="#" class="f-l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
+                                <input type="checkbox" name="hobby" value="" class="f_l"/>
+                                <a href="#" class="f_l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
                                 <div style="clear:both;"></div>
                             </dt>
                             <dd>
@@ -178,7 +178,7 @@
                             </dd>
                             <div style="clear:both;"></div>
                         </dl>
-                        <div class="dai-right f-l">
+                        <div class="dai-right f_l">
                             <P class="d-r-p1" style=" position:relative;top:-20px;">颜色：蓝色<br />尺码：XL</P>
                             <p class="d-r-p2" style="top:-43px;">¥ 66.00</p>
                             <p class="d-r-p3" style="top:-43px;">¥ 66.00</p>
@@ -197,8 +197,8 @@
                     <div class="dai-con">
                         <dl class="dl1">
                             <dt>
-                                <input type="checkbox" name="hobby" value="" class="f-l"/>
-                                <a href="#" class="f-l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
+                                <input type="checkbox" name="hobby" value="" class="f_l"/>
+                                <a href="#" class="f_l"><img src="<%=root%>static/images/bomei_white2.jpg" /></a>
                                 <div style="clear:both;"></div>
                             </dt>
                             <dd>
@@ -207,7 +207,7 @@
                             </dd>
                             <div style="clear:both;"></div>
                         </dl>
-                        <div class="dai-right f-l">
+                        <div class="dai-right f_l">
                             <P class="d-r-p1">颜色：蓝色<br />尺码：XL</P>
                             <p class="d-r-p2">¥ 66.00</p>
                             <p class="d-r-p3">¥ 66.00</p>
@@ -218,9 +218,9 @@
                 </div>
                 <!--分页-->
                 <div class="paging">
-                    <div class="pag-left f-l">
-                        <a href="#" class="about left-r f-l"><</a>
-                        <ul class="left-m f-l">
+                    <div class="pag-left f_l">
+                        <a href="#" class="about left-r f_l"><</a>
+                        <ul class="left-m f_l">
                             <li><a href="#">1</a></li>
                             <li class="current"><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
@@ -231,14 +231,14 @@
                             <li><a href="#">100</a></li>
                             <div style="clear:both;"></div>
                         </ul>
-                        <a href="#" class="about left-l f-l">></a>
+                        <a href="#" class="about left-l f_l">></a>
                         <div style="clear:both;"></div>
                     </div>
-                    <div class="pag-right f-l">
-                        <div class="jump-page f-l">
+                    <div class="pag-right f_l">
+                        <div class="jump-page f_l">
                             到第<input type="text" />页
                         </div>
-                        <button class="f-l">确定</button>
+                        <button class="f_l">确定</button>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>

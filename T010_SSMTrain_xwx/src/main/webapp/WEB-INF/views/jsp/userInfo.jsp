@@ -38,7 +38,7 @@
 <div class="container" style="">
     <!--个人资料-->
     <div class="personal w1200">
-        <div class="personal_menu f-l">
+        <div class="personal_menu f_l">
             <div class="personal_title">
                 <h3>个人中心</h3>
             </div>
@@ -63,36 +63,36 @@
                     </div>
                     <div class="data-con">
                         <div class="dt1">
-                            <p class="f-l">当前头像：</p>
-                            <div class="avatar f-l">
-                                <div class="tu f-l">
+                            <p class="f_l">当前头像：</p>
+                            <div class="avatar f_l">
+                                <div class="tu f_l">
                                     <a href="#">
                                         <img src="<%=root%>static/images/img/data-tu.gif"/>
                                         <input type="file" name="avatarFile" id="" class="img1"/>
                                     </a>
                                 </div>
-                                <a href="JavaScript:;" class="sc f-l" shangchuang="">上传头像</a>
+                                <a href="JavaScript:;" class="sc f_l" shangchuang="">上传头像</a>
                                 <div style="clear:both;"></div>
                             </div>
                             <div style="clear:both;"></div>
                         </div>
                         <div class="dt1">
-                            <p class="dt-p f-l">用户名：</p>
+                            <p class="dt-p f_l">用户名：</p>
                             <input type="text" id="username" name="username" disabled="disabled"/>
                             <div style="clear:both;"></div>
                         </div>
                         <div class="dt1">
-                            <p class="dt-p f-l">电子邮箱：</p>
+                            <p class="dt-p f_l">电子邮箱：</p>
                             <input type="text" id="email" name="email" disabled="disabled"/>
                             <div style="clear:both;"></div>
                         </div>
                         <div class="dt1">
-                            <p class="dt-p f-l">手机号码：</p>
+                            <p class="dt-p f_l">手机号码：</p>
                             <input type="text" id="phone" name="phone" disabled="disabled"/>
                             <div style="clear:both;"></div>
                         </div>
                         <div class="dt1 gender_span">
-                            <p class="dt-p f-l">性别：</p>
+                            <p class="dt-p f_l">性别：</p>
                             <input type="radio" name="gender" id="gender_male" value="1" disabled/><label
                                 for="gender_male">男</label>
                             <input type="radio" name="gender" id="gender_female" value="0" disabled/><label

@@ -9,6 +9,7 @@ import com.lonton.petstore.services.exceptions.AddressNotExistsException;
 import com.lonton.petstore.services.exceptions.ArgumentException;
 import com.lonton.petstore.services.exceptions.InsertDataException;
 import com.lonton.petstore.services.exceptions.UpdateDataException;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +22,7 @@ import java.util.List;
  *
  * @author xuwanxing
  */
+@Log4j
 @Service("addressService")
 public class AddressServiceImpl implements IAddressService {
     @Autowired
@@ -35,14 +37,15 @@ public class AddressServiceImpl implements IAddressService {
      * @return 当前用户收货地址列表
      */
     @Override
-    public Address addAddress(Address address) {
+    public void addAddress(Address address) {
         int count = getCountByUid(address.getUid());
+        address.setCreatedTime(new Date());
         if (count == 0) {
             // 0:默认收货地址
             address.setIsDefault(0);
         }
+        log.error(address);
         insertAddress(address);
-        return address;
     }
     
     private int getCountByUid(Integer uid) {
@@ -129,7 +132,7 @@ public class AddressServiceImpl implements IAddressService {
      * @return 收货地址列表
      */
     @Override
-    public List<Address> getAddresses(Integer uid) {
+    public List<Address> getAddressList(Integer uid) {
         return selectAddressByUid(uid);
     }
     
@@ -140,7 +143,7 @@ public class AddressServiceImpl implements IAddressService {
      */
     private void insertAddress(Address address) throws InsertDataException {
         address.setCreatedTime(new Date());
-        int rows = addressMapper.insert(address);
+        int rows = addressMapper.insertSelective(address);
         if (rows != 1) {
             throw new InsertDataException("未知错误,新增收货地址失败!");
         }

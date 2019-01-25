@@ -30,7 +30,7 @@ public interface IUserService {
     
     User getUserByUsername(String username);
     
-    User getUserByUid(Integer uid);
+    User getUserById(Integer uid);
     
-    void updateInfo(User user) throws UserNotFoundException, UpdateDataException;
+    void updateUserInfo(User user) throws UserNotFoundException, UpdateDataException;
 }

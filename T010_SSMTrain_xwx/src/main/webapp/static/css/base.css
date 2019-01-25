@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 
+/*==================通用==================*/
+.w1200{ width:1200px; margin:0 auto;}
+.mt20{ margin-top:20px;}
+.f_l{ float:left;}
+.f-r{ float:right;}
+.none{ display:none;}
+/*==================通用==================*/
+
 /*==================导航栏==================*/
 body {
     padding-top: 51px;
@@ -81,7 +89,31 @@ nav {
 .mobile_QR_code:hover img {
     display: block;
 }
-/*===============导航栏================*/
+/*===============顶部导航栏================*/
+
+/*===============底部导航栏================*/
+/*底部服务*/
+.ft-service{margin-top:70px; border-top:2px solid #205DAB; border-bottom:1px solid #DFDFDF; padding:17px 0 20px;text-align: center;}
+.sv-con-l2{ width:auto;float:left;}
+.sv-con-l2 dl{ width:114px; height:130px; margin-left:51px;border-right:1px solid #DEDEDE; float:left;}
+.sv-con-l2 dl dt{ height:32px;text-align: left;}
+.sv-con-l2 dl dd{text-align: left;}
+.sv-con-l2 dl dt a{ font-size:16px; color:#000;}
+.sv-con-l2 dl dt a:hover{ color:#F09E0B;}
+.sv-con-l2 dl dd a{ display:block; height:32px; font-size:14px; color:#333;}
+.sv-con-l2 dl dd a:hover{color:#F09E0B;}
+.sv-con-r2{ width:214px; text-align:center;display: inline-block;margin-left: 25px;}
+.sv-con-r2 p{ font-size:16px; color:#000; margin-bottom:10px;}
+.sv-con-r2 .sv-r-tle{ font-size:28px;}
+.sv-con-r2 a{ display:block; width:161px; height:40px; line-height:40px; color:#fff; font-size:16px; background-color:#2A2826;margin:0 auto;}
+
+/*底部 版权*/
+.footer{ padding:20px 0; text-align:center;}
+.footer p{ height:30px;font-size:14px; color:#000;}
+.footer p a{ display:inline-block; font-size:14px; color:#000;}
+.footer p a:hover{color:#F09E0B;}
+.footer p span{ margin:0 8px 0 10px;}
+/*===============底部导航栏================*/
 
 
 /*===============关于我们================*/
@@ -213,6 +245,15 @@ nav {
     margin: 50px auto 0;
 }
 /*===============注册================*/
+/*===============注册================*/
+.personal-left{ width:216px;border:1px solid #DEDEDE;}
+.personal-l-tit{ height:45px; background:#F5A81D; font-weight:normal; font-size:16px; color:#fff; margin-left:15px; line-height:45px;}
+.personal-left ul{ padding:0 5px;}
+.personal-left a{ height:46px; line-height:46px; border-bottom:1px solid #DEDEDE;display:block; padding-left:50px; font-size:14px; color:#1E1E1E;}
+.personal-left .active{color:#F5A91E;}
+.personal-left a:hover a{color:#F5A91E;}
+.personal-left li a span{ font-family:"宋体"; float:right; margin-right:15px;}
+/*===============注册================*/
 
 /*===============购物车================*/
 /*===============购物车====================*/
@@ -279,18 +320,6 @@ nav {
     width: 15%;
 }
 
-.modify_ico, .delete_ico {
-    padding-left: 16px;
-    background: url(../images/save_ico.png) no-repeat 0 2px;
-}
-
-.sh_address_box .modify_ico {
-    background-image: url(../images/editor_ico.png);
-}
-
-.sh_address_box .delete_ico {
-    background-image: url(../images/delete_ico.png);
-}
 
 /*.add_btn {*/
     /*padding: 0 8px 0 21px;*/
@@ -364,5 +393,11 @@ nav {
 .news_addr .o_layout {
     float: left;
     margin-top: 20px;
+}
+
+#addressList a {
+    color: #853031;
+    cursor: pointer;
+
 }
 /*===============地址================*/
